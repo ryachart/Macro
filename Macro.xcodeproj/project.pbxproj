@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF052F28148DDC1C00CD53A5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF052F27148DDC1C00CD53A5 /* QuartzCore.framework */; };
 		BFB141B7148B277200923D51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB141B6148B277200923D51 /* UIKit.framework */; };
 		BFB141B9148B277200923D51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB141B8148B277200923D51 /* Foundation.framework */; };
 		BFB141BB148B277200923D51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB141BA148B277200923D51 /* CoreGraphics.framework */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF052F27148DDC1C00CD53A5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BFB141B2148B277200923D51 /* Macro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Macro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB141B6148B277200923D51 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BFB141B8148B277200923D51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -82,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF052F28148DDC1C00CD53A5 /* QuartzCore.framework in Frameworks */,
 				BFB141B7148B277200923D51 /* UIKit.framework in Frameworks */,
 				BFB141B9148B277200923D51 /* Foundation.framework in Frameworks */,
 				BFB141BB148B277200923D51 /* CoreGraphics.framework in Frameworks */,
@@ -91,9 +94,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF052F23148DD8E900CD53A5 /* Unit */ = {
+			isa = PBXGroup;
+			children = (
+				BFB141DA148B2E8D00923D51 /* Unit.h */,
+				BFB141DB148B2E8D00923D51 /* Unit.m */,
+				BFB14208148C469800923D51 /* Worker.h */,
+				BFB14209148C469800923D51 /* Worker.m */,
+			);
+			name = Unit;
+			sourceTree = "<group>";
+		};
+		BF052F25148DD8F800CD53A5 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				BFB141E3148C137A00923D51 /* Map.h */,
+				BFB141E4148C137A00923D51 /* Map.m */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		BF052F26148DD90B00CD53A5 /* Structure */ = {
+			isa = PBXGroup;
+			children = (
+				BFB141DD148B2E9800923D51 /* Structure.h */,
+				BFB141DE148B2E9800923D51 /* Structure.m */,
+			);
+			name = Structure;
+			sourceTree = "<group>";
+		};
 		BFB141A7148B277200923D51 = {
 			isa = PBXGroup;
 			children = (
+				BF052F27148DDC1C00CD53A5 /* QuartzCore.framework */,
 				BFB141BC148B277200923D51 /* Macro */,
 				BFB141B5148B277200923D51 /* Frameworks */,
 				BFB141B3148B277200923D51 /* Products */,
@@ -147,21 +180,16 @@
 		BFB141D6148B2BA900923D51 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BF052F26148DD90B00CD53A5 /* Structure */,
+				BF052F25148DD8F800CD53A5 /* Map */,
+				BF052F23148DD8E900CD53A5 /* Unit */,
+				BFB141EE148C172600923D51 /* Species */,
 				BFB141D7148B2E7600923D51 /* GameInstance.h */,
 				BFB141D8148B2E7600923D51 /* GameInstance.m */,
 				BFB141E0148B2EA000923D51 /* Player.h */,
 				BFB141E1148B2EA000923D51 /* Player.m */,
-				BFB141E3148C137A00923D51 /* Map.h */,
-				BFB141E4148C137A00923D51 /* Map.m */,
 				BFB141E6148C156500923D51 /* Physical.h */,
 				BFB141E7148C156500923D51 /* Physical.m */,
-				BFB141DA148B2E8D00923D51 /* Unit.h */,
-				BFB141DB148B2E8D00923D51 /* Unit.m */,
-				BFB141DD148B2E9800923D51 /* Structure.h */,
-				BFB141DE148B2E9800923D51 /* Structure.m */,
-				BFB14208148C469800923D51 /* Worker.h */,
-				BFB14209148C469800923D51 /* Worker.m */,
-				BFB141EE148C172600923D51 /* Species */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -458,6 +486,7 @@
 				BFB141D5148B277200923D51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

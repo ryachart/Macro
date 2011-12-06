@@ -7,13 +7,31 @@
 //
 
 #import "MACViewController.h"
+#import <QuartzCore/QuartzCore.h>
+
+
+@interface MACViewController ()
+@property (nonatomic, retain) CADisplayLink *link;
+-(void)update:(CADisplayLink*)sender;
+@end
+
 
 @implementation MACViewController
+@synthesize link;
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
+}
+
+
+
+#pragma mark - Run Loop
+
+-(void)update:(CADisplayLink*)sender{
+    CFTimeInterval deltaTime = [sender duration];
+    NSLog(@"deltaT: %1.2f", deltaTime);
 }
 
 #pragma mark - View lifecycle
@@ -22,6 +40,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.link = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
+    [self.link setFrameInterval:1.0/60.0];
+     
 }
 
 - (void)viewDidUnload
@@ -39,11 +61,13 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self.link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
+    [self.link invalidate];
 }
 
 - (void)viewDidDisappear:(BOOL)animated

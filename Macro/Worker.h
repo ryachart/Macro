@@ -15,4 +15,5 @@ typedef enum {
 
 @interface Worker : Unit
 @property (nonatomic) WorkerType type;
+@property (nonatomic) NSInteger gainsPerMinute;
 @end
