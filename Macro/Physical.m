@@ -1,0 +1,13 @@
+//
+//  Physical.m
+//  Macro
+//
+//  Created by Ryan Hart on 12/4/11.
+//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
+//
+
+#import "Physical.h"
+
+@implementation Physical
+@synthesize health;
+@end

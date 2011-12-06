@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BFB141B7148B277200923D51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB141B6148B277200923D51 /* UIKit.framework */; };
+		BFB141B9148B277200923D51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB141B8148B277200923D51 /* Foundation.framework */; };
+		BFB141BB148B277200923D51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB141BA148B277200923D51 /* CoreGraphics.framework */; };
+		BFB141C1148B277200923D51 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFB141BF148B277200923D51 /* InfoPlist.strings */; };
+		BFB141C3148B277200923D51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141C2148B277200923D51 /* main.m */; };
+		BFB141C7148B277200923D51 /* MACAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141C6148B277200923D51 /* MACAppDelegate.m */; };
+		BFB141CA148B277200923D51 /* MACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141C9148B277200923D51 /* MACViewController.m */; };
+		BFB141CD148B277200923D51 /* MACViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB141CB148B277200923D51 /* MACViewController_iPhone.xib */; };
+		BFB141D0148B277200923D51 /* MACViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB141CE148B277200923D51 /* MACViewController_iPad.xib */; };
+		BFB141D9148B2E7600923D51 /* GameInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141D8148B2E7600923D51 /* GameInstance.m */; };
+		BFB141DC148B2E8D00923D51 /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141DB148B2E8D00923D51 /* Unit.m */; };
+		BFB141DF148B2E9800923D51 /* Structure.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141DE148B2E9800923D51 /* Structure.m */; };
+		BFB141E2148B2EA000923D51 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141E1148B2EA000923D51 /* Player.m */; };
+		BFB141E5148C137A00923D51 /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141E4148C137A00923D51 /* Map.m */; };
+		BFB141E8148C156500923D51 /* Physical.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141E7148C156500923D51 /* Physical.m */; };
+		BFB141EB148C15D500923D51 /* Species.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141EA148C15D500923D51 /* Species.m */; };
+		BFB141F8148C197F00923D51 /* BugBase.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141F7148C197F00923D51 /* BugBase.m */; };
+		BFB141FB148C198B00923D51 /* HumanBase.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141FA148C198B00923D51 /* HumanBase.m */; };
+		BFB141FE148C199600923D51 /* RobotBase.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141FD148C199600923D51 /* RobotBase.m */; };
+		BFB14201148C409A00923D51 /* BugWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB14200148C409A00923D51 /* BugWorker.m */; };
+		BFB14204148C40A900923D51 /* HumanWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB14203148C40A900923D51 /* HumanWorker.m */; };
+		BFB14207148C431500923D51 /* RobotWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB14206148C431500923D51 /* RobotWorker.m */; };
+		BFB1420A148C469900923D51 /* Worker.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB14209148C469800923D51 /* Worker.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BFB141B2148B277200923D51 /* Macro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Macro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFB141B6148B277200923D51 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BFB141B8148B277200923D51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BFB141BA148B277200923D51 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BFB141BE148B277200923D51 /* Macro-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Macro-Info.plist"; sourceTree = "<group>"; };
+		BFB141C0148B277200923D51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BFB141C2148B277200923D51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BFB141C4148B277200923D51 /* Macro-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Macro-Prefix.pch"; sourceTree = "<group>"; };
+		BFB141C5148B277200923D51 /* MACAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MACAppDelegate.h; sourceTree = "<group>"; };
+		BFB141C6148B277200923D51 /* MACAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MACAppDelegate.m; sourceTree = "<group>"; };
+		BFB141C8148B277200923D51 /* MACViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MACViewController.h; sourceTree = "<group>"; };
+		BFB141C9148B277200923D51 /* MACViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MACViewController.m; sourceTree = "<group>"; };
+		BFB141CC148B277200923D51 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MACViewController_iPhone.xib; sourceTree = "<group>"; };
+		BFB141CF148B277200923D51 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MACViewController_iPad.xib; sourceTree = "<group>"; };
+		BFB141D7148B2E7600923D51 /* GameInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameInstance.h; sourceTree = "<group>"; };
+		BFB141D8148B2E7600923D51 /* GameInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameInstance.m; sourceTree = "<group>"; };
+		BFB141DA148B2E8D00923D51 /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unit.h; sourceTree = "<group>"; };
+		BFB141DB148B2E8D00923D51 /* Unit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Unit.m; sourceTree = "<group>"; };
+		BFB141DD148B2E9800923D51 /* Structure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Structure.h; sourceTree = "<group>"; };
+		BFB141DE148B2E9800923D51 /* Structure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Structure.m; sourceTree = "<group>"; };
+		BFB141E0148B2EA000923D51 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		BFB141E1148B2EA000923D51 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		BFB141E3148C137A00923D51 /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
+		BFB141E4148C137A00923D51 /* Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Map.m; sourceTree = "<group>"; };
+		BFB141E6148C156500923D51 /* Physical.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Physical.h; sourceTree = "<group>"; };
+		BFB141E7148C156500923D51 /* Physical.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Physical.m; sourceTree = "<group>"; };
+		BFB141E9148C15D500923D51 /* Species.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Species.h; sourceTree = "<group>"; };
+		BFB141EA148C15D500923D51 /* Species.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Species.m; sourceTree = "<group>"; };
+		BFB141F6148C197F00923D51 /* BugBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugBase.h; sourceTree = "<group>"; };
+		BFB141F7148C197F00923D51 /* BugBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugBase.m; sourceTree = "<group>"; };
+		BFB141F9148C198B00923D51 /* HumanBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HumanBase.h; sourceTree = "<group>"; };
+		BFB141FA148C198B00923D51 /* HumanBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HumanBase.m; sourceTree = "<group>"; };
+		BFB141FC148C199600923D51 /* RobotBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotBase.h; sourceTree = "<group>"; };
+		BFB141FD148C199600923D51 /* RobotBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotBase.m; sourceTree = "<group>"; };
+		BFB141FF148C409A00923D51 /* BugWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugWorker.h; sourceTree = "<group>"; };
+		BFB14200148C409A00923D51 /* BugWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugWorker.m; sourceTree = "<group>"; };
+		BFB14202148C40A900923D51 /* HumanWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HumanWorker.h; sourceTree = "<group>"; };
+		BFB14203148C40A900923D51 /* HumanWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HumanWorker.m; sourceTree = "<group>"; };
+		BFB14205148C431500923D51 /* RobotWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotWorker.h; sourceTree = "<group>"; };
+		BFB14206148C431500923D51 /* RobotWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotWorker.m; sourceTree = "<group>"; };
+		BFB14208148C469800923D51 /* Worker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Worker.h; sourceTree = "<group>"; };
+		BFB14209148C469800923D51 /* Worker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Worker.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BFB141AF148B277200923D51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFB141B7148B277200923D51 /* UIKit.framework in Frameworks */,
+				BFB141B9148B277200923D51 /* Foundation.framework in Frameworks */,
+				BFB141BB148B277200923D51 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BFB141A7148B277200923D51 = {
+			isa = PBXGroup;
+			children = (
+				BFB141BC148B277200923D51 /* Macro */,
+				BFB141B5148B277200923D51 /* Frameworks */,
+				BFB141B3148B277200923D51 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BFB141B3148B277200923D51 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BFB141B2148B277200923D51 /* Macro.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BFB141B5148B277200923D51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFB141B6148B277200923D51 /* UIKit.framework */,
+				BFB141B8148B277200923D51 /* Foundation.framework */,
+				BFB141BA148B277200923D51 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BFB141BC148B277200923D51 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				BFB141D6148B2BA900923D51 /* Model */,
+				BFB141C5148B277200923D51 /* MACAppDelegate.h */,
+				BFB141C6148B277200923D51 /* MACAppDelegate.m */,
+				BFB141C8148B277200923D51 /* MACViewController.h */,
+				BFB141C9148B277200923D51 /* MACViewController.m */,
+				BFB141CB148B277200923D51 /* MACViewController_iPhone.xib */,
+				BFB141CE148B277200923D51 /* MACViewController_iPad.xib */,
+				BFB141BD148B277200923D51 /* Supporting Files */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		BFB141BD148B277200923D51 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BFB141BE148B277200923D51 /* Macro-Info.plist */,
+				BFB141BF148B277200923D51 /* InfoPlist.strings */,
+				BFB141C2148B277200923D51 /* main.m */,
+				BFB141C4148B277200923D51 /* Macro-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BFB141D6148B2BA900923D51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BFB141D7148B2E7600923D51 /* GameInstance.h */,
+				BFB141D8148B2E7600923D51 /* GameInstance.m */,
+				BFB141E0148B2EA000923D51 /* Player.h */,
+				BFB141E1148B2EA000923D51 /* Player.m */,
+				BFB141E3148C137A00923D51 /* Map.h */,
+				BFB141E4148C137A00923D51 /* Map.m */,
+				BFB141E6148C156500923D51 /* Physical.h */,
+				BFB141E7148C156500923D51 /* Physical.m */,
+				BFB141DA148B2E8D00923D51 /* Unit.h */,
+				BFB141DB148B2E8D00923D51 /* Unit.m */,
+				BFB141DD148B2E9800923D51 /* Structure.h */,
+				BFB141DE148B2E9800923D51 /* Structure.m */,
+				BFB14208148C469800923D51 /* Worker.h */,
+				BFB14209148C469800923D51 /* Worker.m */,
+				BFB141EE148C172600923D51 /* Species */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BFB141EC148C171A00923D51 /* Units */ = {
+			isa = PBXGroup;
+			children = (
+				BFB141FF148C409A00923D51 /* BugWorker.h */,
+				BFB14200148C409A00923D51 /* BugWorker.m */,
+			);
+			name = Units;
+			sourceTree = "<group>";
+		};
+		BFB141ED148C171F00923D51 /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				BFB141F6148C197F00923D51 /* BugBase.h */,
+				BFB141F7148C197F00923D51 /* BugBase.m */,
+			);
+			name = Structures;
+			sourceTree = "<group>";
+		};
+		BFB141EE148C172600923D51 /* Species */ = {
+			isa = PBXGroup;
+			children = (
+				BFB141E9148C15D500923D51 /* Species.h */,
+				BFB141EA148C15D500923D51 /* Species.m */,
+				BFB141F1148C175E00923D51 /* Bugs */,
+				BFB141F0148C175800923D51 /* Humans */,
+				BFB141EF148C175300923D51 /* Robots */,
+			);
+			name = Species;
+			sourceTree = "<group>";
+		};
+		BFB141EF148C175300923D51 /* Robots */ = {
+			isa = PBXGroup;
+			children = (
+				BFB141F5148C178700923D51 /* Structures */,
+				BFB141F3148C177900923D51 /* Units */,
+			);
+			name = Robots;
+			sourceTree = "<group>";
+		};
+		BFB141F0148C175800923D51 /* Humans */ = {
+			isa = PBXGroup;
+			children = (
+				BFB141F4148C178200923D51 /* Structures */,
+				BFB141F2148C177400923D51 /* Units */,
+			);
+			name = Humans;
+			sourceTree = "<group>";
+		};
+		BFB141F1148C175E00923D51 /* Bugs */ = {
+			isa = PBXGroup;
+			children = (
+				BFB141ED148C171F00923D51 /* Structures */,
+				BFB141EC148C171A00923D51 /* Units */,
+			);
+			name = Bugs;
+			sourceTree = "<group>";
+		};
+		BFB141F2148C177400923D51 /* Units */ = {
+			isa = PBXGroup;
+			children = (
+				BFB14202148C40A900923D51 /* HumanWorker.h */,
+				BFB14203148C40A900923D51 /* HumanWorker.m */,
+			);
+			name = Units;
+			sourceTree = "<group>";
+		};
+		BFB141F3148C177900923D51 /* Units */ = {
+			isa = PBXGroup;
+			children = (
+				BFB14205148C431500923D51 /* RobotWorker.h */,
+				BFB14206148C431500923D51 /* RobotWorker.m */,
+			);
+			name = Units;
+			sourceTree = "<group>";
+		};
+		BFB141F4148C178200923D51 /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				BFB141F9148C198B00923D51 /* HumanBase.h */,
+				BFB141FA148C198B00923D51 /* HumanBase.m */,
+			);
+			name = Structures;
+			sourceTree = "<group>";
+		};
+		BFB141F5148C178700923D51 /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				BFB141FC148C199600923D51 /* RobotBase.h */,
+				BFB141FD148C199600923D51 /* RobotBase.m */,
+			);
+			name = Structures;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BFB141B1148B277200923D51 /* Macro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFB141D3148B277200923D51 /* Build configuration list for PBXNativeTarget "Macro" */;
+			buildPhases = (
+				BFB141AE148B277200923D51 /* Sources */,
+				BFB141AF148B277200923D51 /* Frameworks */,
+				BFB141B0148B277200923D51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Macro;
+			productName = Macro;
+			productReference = BFB141B2148B277200923D51 /* Macro.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFB141A9148B277200923D51 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = BFB141AC148B277200923D51 /* Build configuration list for PBXProject "Macro" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BFB141A7148B277200923D51;
+			productRefGroup = BFB141B3148B277200923D51 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BFB141B1148B277200923D51 /* Macro */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BFB141B0148B277200923D51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFB141C1148B277200923D51 /* InfoPlist.strings in Resources */,
+				BFB141CD148B277200923D51 /* MACViewController_iPhone.xib in Resources */,
+				BFB141D0148B277200923D51 /* MACViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BFB141AE148B277200923D51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFB141C3148B277200923D51 /* main.m in Sources */,
+				BFB141C7148B277200923D51 /* MACAppDelegate.m in Sources */,
+				BFB141CA148B277200923D51 /* MACViewController.m in Sources */,
+				BFB141D9148B2E7600923D51 /* GameInstance.m in Sources */,
+				BFB141DC148B2E8D00923D51 /* Unit.m in Sources */,
+				BFB141DF148B2E9800923D51 /* Structure.m in Sources */,
+				BFB141E2148B2EA000923D51 /* Player.m in Sources */,
+				BFB141E5148C137A00923D51 /* Map.m in Sources */,
+				BFB141E8148C156500923D51 /* Physical.m in Sources */,
+				BFB141EB148C15D500923D51 /* Species.m in Sources */,
+				BFB141F8148C197F00923D51 /* BugBase.m in Sources */,
+				BFB141FB148C198B00923D51 /* HumanBase.m in Sources */,
+				BFB141FE148C199600923D51 /* RobotBase.m in Sources */,
+				BFB14201148C409A00923D51 /* BugWorker.m in Sources */,
+				BFB14204148C40A900923D51 /* HumanWorker.m in Sources */,
+				BFB14207148C431500923D51 /* RobotWorker.m in Sources */,
+				BFB1420A148C469900923D51 /* Worker.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BFB141BF148B277200923D51 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFB141C0148B277200923D51 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BFB141CB148B277200923D51 /* MACViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFB141CC148B277200923D51 /* en */,
+			);
+			name = MACViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		BFB141CE148B277200923D51 /* MACViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFB141CF148B277200923D51 /* en */,
+			);
+			name = MACViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BFB141D1148B277200923D51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BFB141D2148B277200923D51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BFB141D4148B277200923D51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Macro/Macro-Prefix.pch";
+				INFOPLIST_FILE = "Macro/Macro-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BFB141D5148B277200923D51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Macro/Macro-Prefix.pch";
+				INFOPLIST_FILE = "Macro/Macro-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BFB141AC148B277200923D51 /* Build configuration list for PBXProject "Macro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFB141D1148B277200923D51 /* Debug */,
+				BFB141D2148B277200923D51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFB141D3148B277200923D51 /* Build configuration list for PBXNativeTarget "Macro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFB141D4148B277200923D51 /* Debug */,
+				BFB141D5148B277200923D51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFB141A9148B277200923D51 /* Project object */;
+}
