@@ -7,7 +7,8 @@
 //
 
 #import "Unit.h"
+#import "Worker.h"
 
-@interface RobotWorker : Unit
+@interface RobotWorker : Worker
 
 @end

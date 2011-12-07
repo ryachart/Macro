@@ -9,5 +9,10 @@
 #import "RobotBase.h"
 
 @implementation RobotBase
-
+-(id)init{
+    if (self = [super init]){
+        self.maximumSupplyContribution = 10;
+    }
+    return self;
+}
 @end

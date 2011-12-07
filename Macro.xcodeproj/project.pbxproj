@@ -126,7 +126,6 @@
 		BFB141A7148B277200923D51 = {
 			isa = PBXGroup;
 			children = (
-				BF052F27148DDC1C00CD53A5 /* QuartzCore.framework */,
 				BFB141BC148B277200923D51 /* Macro */,
 				BFB141B5148B277200923D51 /* Frameworks */,
 				BFB141B3148B277200923D51 /* Products */,
@@ -144,6 +143,7 @@
 		BFB141B5148B277200923D51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF052F27148DDC1C00CD53A5 /* QuartzCore.framework */,
 				BFB141B6148B277200923D51 /* UIKit.framework */,
 				BFB141B8148B277200923D51 /* Foundation.framework */,
 				BFB141BA148B277200923D51 /* CoreGraphics.framework */,

@@ -9,5 +9,11 @@
 #import "HumanBase.h"
 
 @implementation HumanBase
+-(id)init{
+    if (self = [super init]){
+        self.maximumSupplyContribution = 10;
+    }
+    return self;
+}
 
 @end

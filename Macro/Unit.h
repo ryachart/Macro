@@ -11,4 +11,6 @@
 
 @interface Unit : Physical
 
+@property (nonatomic) NSInteger supplyCost;
+
 @end

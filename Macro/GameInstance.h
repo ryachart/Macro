@@ -9,10 +9,14 @@
 #import <Foundation/Foundation.h>
 
 @class Map;
-
+@class Player;
 @interface GameInstance : NSObject
 
+@property (nonatomic) CFTimeInterval gameDuration;
 @property (nonatomic, retain) NSArray* players;
 @property (nonatomic, retain) Map *map;
+@property (nonatomic, readonly) Player *localPlayer;
 
+-(id)initWithMap:(Map*)newMap andPlayers:(NSArray*)newPlayers;
+-(void)update:(CFTimeInterval)interval;
 @end

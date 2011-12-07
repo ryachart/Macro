@@ -11,4 +11,7 @@
 
 @interface Structure : Physical
 
+@property (nonatomic) BOOL isBuilder;
+@property (nonatomic) BOOL isDefender;
+
 @end

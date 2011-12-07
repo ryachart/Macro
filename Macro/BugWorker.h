@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Worker.h"
 
-@interface BugWorker : NSObject
+@interface BugWorker : Worker
 
 @end

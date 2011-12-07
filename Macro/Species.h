@@ -9,22 +9,28 @@
 #import <Foundation/Foundation.h>
 @class Player;
 @class Physical;
+@class Worker;
+@class Structure;
 
 typedef enum {
     Robots,
     Humans,
     Bugs
-} SpeciesTypes;
+} SpeciesType;
 
 @interface Species : NSObject
 
 //All of the structures for a species
--(NSArray*)structuresForSpecies;
++(NSArray*)structuresForSpecies;
 
 //All of the units for a species
--(NSArray*)unitsForSpecies;
++(NSArray*)unitsForSpecies;
 
 //Tech Tree Management
--(BOOL)player:(Player*)player hasTechForPhysical:(Physical*)physical;
++(NSArray*)availableStructuresForPlayer:(Player*)player;
++(NSArray*)availableUnitsForPlayer:(Player*)player;
+
++(Worker*)workerForSpecies:(SpeciesType)type;
++(Structure*)baseForSpecies:(SpeciesType)type;
 
 @end

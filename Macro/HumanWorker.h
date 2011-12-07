@@ -7,8 +7,8 @@
 //
 
 #import "Unit.h"
-
-@interface HumanWorker : Unit
+#import "Worker.h"
+@interface HumanWorker : Worker
 
 
 @end

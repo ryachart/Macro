@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MACViewController : UIViewController
+#define UIUpdateFrameInterval  20.0f/60.0f
+@class GameInstance;
 
+@interface MACViewController : UITableViewController
+@property (nonatomic, retain) GameInstance *gameInstance;
 @end

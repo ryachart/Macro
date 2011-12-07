@@ -9,7 +9,7 @@
 #import "Unit.h"
 
 @implementation Unit
-
+@synthesize supplyCost;
 
 
 @end

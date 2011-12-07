@@ -9,5 +9,15 @@
 #import "Structure.h"
 
 @implementation Structure
+@synthesize maximumSupplyContribution;
+@synthesize isBuilder;
+@synthesize isDefender;
 
+-(id)init{
+    if (self = [super init]){
+        self.isBuilder = NO;
+        self.isDefender = NO;
+    }
+    return self;
+}
 @end

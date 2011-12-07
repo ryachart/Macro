@@ -8,16 +8,22 @@
 
 #import "MACViewController.h"
 #import <QuartzCore/QuartzCore.h>
-
+#import "GameInstance.h"
+#import "Player.h"
 
 @interface MACViewController ()
 @property (nonatomic, retain) CADisplayLink *link;
+@property (nonatomic) CFTimeInterval timeSinceLastUIUpdate;
+
 -(void)update:(CADisplayLink*)sender;
+-(void)display;
 @end
 
 
 @implementation MACViewController
 @synthesize link;
+@synthesize gameInstance;
+@synthesize timeSinceLastUIUpdate;
 
 - (void)didReceiveMemoryWarning
 {
@@ -30,20 +36,117 @@
 #pragma mark - Run Loop
 
 -(void)update:(CADisplayLink*)sender{
-    CFTimeInterval deltaTime = [sender duration];
-    NSLog(@"deltaT: %1.2f", deltaTime);
+    CFTimeInterval interval = [sender duration];
+    
+    [self.gameInstance update:interval];
+    
+    self.timeSinceLastUIUpdate += interval;
+    if (self.timeSinceLastUIUpdate >= UIUpdateFrameInterval){
+        [self display];
+    }
 }
 
+-(void)display{
+     [self.tableView reloadData];
+}
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Macro Game";
+    self.timeSinceLastUIUpdate = 0.0;
+
 	// Do any additional setup after loading the view, typically from a nib.
+    Player *bugPlayer = [[Player alloc] initWithSpecies:Bugs];
+    [bugPlayer initializeForBasicGame];
+    Player *humanPlayer = [[Player alloc] initWithSpecies:Humans];
+    [humanPlayer initializeForBasicGame];
+    self.gameInstance = [[[GameInstance alloc] initWithMap:nil andPlayers:[NSArray arrayWithObjects: humanPlayer, bugPlayer, nil]] autorelease];
+    
+    
     
     self.link = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
     [self.link setFrameInterval:1.0/60.0];
-     
+}
+
+
+#pragma mark - Table View Delegate & Data Source
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 1){
+        return 90.0f;
+    }
+    return 30.0f;
+}
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    switch (section) {
+        case 0:
+            return @"Status";
+        case 1:
+            return @"Structures";
+
+    }
+    return nil;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    switch (section) {
+        case 0:
+            //Minerals
+            //Gas
+            //Supply
+            return 3;
+        case 1:
+            //Each structure builds something
+            return [[self.gameInstance.localPlayer structures] count];
+    }
+    return 0;
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    //Resources
+    //Structures
+    return 2;
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString* cellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    
+    //Cell Configuration
+    if (indexPath.section == 0){
+        switch (indexPath.row) {
+            case 0:
+                cell.textLabel.text = [NSString stringWithFormat:@"Minerals: %i", self.gameInstance.localPlayer.minerals];
+                break;
+            case 1:
+                cell.textLabel.text = [NSString stringWithFormat:@"Gas: %i", self.gameInstance.localPlayer.gas];
+                break;
+            case 2:
+                cell.textLabel.text = [NSString stringWithFormat:@"Supply: %i/%i", self.gameInstance.localPlayer.currentSupply, self.gameInstance.localPlayer.maximumSupply];
+                break;
+            default:
+                break;
+        }
+    }
+    else if (indexPath.section == 1){
+        cell.textLabel.text = [[self.gameInstance.localPlayer.structures objectAtIndex:[indexPath row]] title];
+    }
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.section == 1){
+        
+    }
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)viewDidUnload
@@ -56,6 +159,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
