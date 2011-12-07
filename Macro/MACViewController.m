@@ -8,8 +8,13 @@
 
 #import "MACViewController.h"
 #import <QuartzCore/QuartzCore.h>
+
+#import "StructureViewController.h"
+
 #import "GameInstance.h"
 #import "Player.h"
+#import "Structure.h"
+#import "Physical.h"
 
 @interface MACViewController ()
 @property (nonatomic, retain) CADisplayLink *link;
@@ -135,7 +140,13 @@
         }
     }
     else if (indexPath.section == 1){
-        cell.textLabel.text = [[self.gameInstance.localPlayer.structures objectAtIndex:[indexPath row]] title];
+        Structure *currentStructure = [self.gameInstance.localPlayer.structures objectAtIndex:[indexPath row]];
+        cell.textLabel.text = [currentStructure title];
+        if (currentStructure.inProgressUnits.count > 0){
+            CFTimeInterval elapsedTime = ((Physical*)[currentStructure.inProgressUnits objectAtIndex:0]).elapsedBuildingProgress;
+            CFTimeInterval totalTime = ((Physical*)[currentStructure.inProgressUnits objectAtIndex:0]).buildTime;
+            cell.textLabel.text = [NSString stringWithFormat:@"%@ Building: %1.1f/%1.1f", [currentStructure title], elapsedTime, totalTime];
+        }
     }
     return cell;
 }
@@ -143,7 +154,9 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (indexPath.section == 1){
-        
+        Structure *currentStructure = [self.gameInstance.localPlayer.structures objectAtIndex:[indexPath row]];
+        StructureViewController *structureVC = [[StructureViewController alloc] initWithGameInstance:self.gameInstance andStructure:currentStructure];
+        [self.navigationController pushViewController:structureVC animated:NO];
     }
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -154,6 +167,7 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    [self.link invalidate];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -171,7 +185,6 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
-    [self.link invalidate];
 }
 
 - (void)viewDidDisappear:(BOOL)animated

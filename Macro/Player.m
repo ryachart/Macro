@@ -18,7 +18,7 @@
 @synthesize structures;
 @synthesize units;
 @synthesize species;
-
+@synthesize inProgressStructures;
 
 -(id)initWithSpecies:(SpeciesType)type{
     if (self = [super init]){
@@ -26,6 +26,8 @@
         species = type;
         self.structures = [NSMutableArray arrayWithObjects: nil];
         self.units = [NSMutableArray arrayWithObjects: nil];
+        self.inProgressStructures = [NSMutableArray arrayWithObjects:nil];
+        
     }
     return self;
 }
@@ -36,11 +38,18 @@
 }
 
 -(void)addUnit:(Unit*)unit{
-    if (([self currentSupply] + [unit supplyCost]) <= [self maximumSupply]){
+    BOOL isFinishedUnit = NO;
+    for (Structure *structure in self.structures){
+        if ([structure.inProgressUnits containsObject:unit]){
+            isFinishedUnit = YES;
+        }
+    }
+    
+    if (([self currentSupply] + [unit supplyCost]) <= [self maximumSupply] || isFinishedUnit){
         [unit setOwner:self];
         [self.units addObject:unit];
     }else{
-        //You can't build that unit
+        //You can't build that unit.  Insufficient supply
     }
 }
 
@@ -50,6 +59,7 @@
     
     for (int i = 0; i < BasicGame_InitialWorkers; i++){
         Worker *worker = [Species workerForSpecies:self.species];
+        [worker setIsBuilding:NO];
         [worker setType:MineralWorker];
         [self addUnit:worker];
     }
@@ -60,6 +70,7 @@
 }
 
 -(void)update:(CFTimeInterval)interval{
+    NSLog(@"Game Update");
     for (Unit *unit in self.units){
         [unit update:interval];
     }
@@ -72,6 +83,12 @@
     NSInteger currentSupply = 0;
     for (Unit* unit in self.units){
         currentSupply += unit.supplyCost;
+    }
+    
+    for (Structure *structure in self.structures){
+        for (Unit *inProgressUnit in structure.inProgressUnits){
+            currentSupply += inProgressUnit.supplyCost;
+        }
     }
     return currentSupply;
 }

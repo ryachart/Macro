@@ -28,7 +28,7 @@ typedef enum {
 
 //Tech Tree Management
 +(NSArray*)availableStructuresForPlayer:(Player*)player;
-+(NSArray*)availableUnitsForPlayer:(Player*)player;
++(NSArray*)availableUnitsForPlayer:(Player*)player fromStructure:(Structure*)structure;
 
 +(Worker*)workerForSpecies:(SpeciesType)type;
 +(Structure*)baseForSpecies:(SpeciesType)type;

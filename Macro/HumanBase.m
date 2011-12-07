@@ -12,6 +12,7 @@
 -(id)init{
     if (self = [super init]){
         self.maximumSupplyContribution = 10;
+        self.structureName = @"HumanBase";
     }
     return self;
 }

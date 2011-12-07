@@ -10,12 +10,29 @@
 @class Player;
 
 @interface Physical : NSObject
+//Building
+@property (readwrite) CFTimeInterval elapsedBuildingProgress;
+@property (readwrite) CFTimeInterval buildTime;
+@property (readwrite) BOOL isBuilding; //Defaults to YES
+@property (readwrite) NSInteger mineralCost;
+@property (readwrite) NSInteger gasCost;
+
+//Belonging
 @property (nonatomic, retain) Player* owner;
-@property (nonatomic, readonly) NSString *title;
+
+//Description
+@property (nonatomic, retain) NSString *title;
+
+//Health
 @property (nonatomic) NSInteger health;
 @property (nonatomic) NSInteger maximumHealth;
-@property (readwrite) BOOL isBuilding; //Defaults to YES
+
+//Supply
 @property (nonatomic) NSInteger maximumSupplyContribution;
+
+//Tech
+@property (nonatomic, retain) NSArray *techDependencies;
+
 
 -(void)update:(CFTimeInterval)interval;
 @end

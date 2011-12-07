@@ -20,10 +20,13 @@
 @property (readonly) SpeciesType species;
 @property (nonatomic) NSInteger minerals;
 @property (nonatomic) NSInteger gas;
+@property (nonatomic, retain) NSMutableArray *inProgressStructures;
 @property (nonatomic, retain) NSMutableArray *structures;
 @property (nonatomic, retain) NSMutableArray *units;
 
 -(id)initWithSpecies:(SpeciesType)type;
+
+-(void)buildStructure:(Structure*)structure;
 
 -(void)addStructure:(Structure*)structure;
 -(void)addUnit:(Unit*)unit;
