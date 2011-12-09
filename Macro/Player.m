@@ -70,7 +70,6 @@
 }
 
 -(void)update:(CFTimeInterval)interval{
-    NSLog(@"Game Update");
     for (Unit *unit in self.units){
         [unit update:interval];
     }

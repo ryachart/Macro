@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		BF052F28148DDC1C00CD53A5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF052F27148DDC1C00CD53A5 /* QuartzCore.framework */; };
 		BF798789148F43ED00F2AF38 /* StructureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF798788148F43ED00F2AF38 /* StructureViewController.m */; };
+		BF99A0EC1491E1BC00E4E97F /* StructureTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF99A0EB1491E1BC00E4E97F /* StructureTableViewCell.m */; };
+		BF99A0EE1491E1DE00E4E97F /* StructureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF99A0ED1491E1DE00E4E97F /* StructureTableViewCell.xib */; };
+		BF99A0F21491E4A700E4E97F /* human_worker.png in Resources */ = {isa = PBXBuildFile; fileRef = BF99A0F01491E4A700E4E97F /* human_worker.png */; };
+		BF99A0F31491E4A700E4E97F /* human_base.png in Resources */ = {isa = PBXBuildFile; fileRef = BF99A0F11491E4A700E4E97F /* human_base.png */; };
+		BF99A0F61491E4E700E4E97F /* AssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF99A0F51491E4E700E4E97F /* AssetManager.m */; };
 		BFB141B7148B277200923D51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB141B6148B277200923D51 /* UIKit.framework */; };
 		BFB141B9148B277200923D51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB141B8148B277200923D51 /* Foundation.framework */; };
 		BFB141BB148B277200923D51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB141BA148B277200923D51 /* CoreGraphics.framework */; };
@@ -38,6 +43,13 @@
 		BF052F27148DDC1C00CD53A5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BF798787148F43ED00F2AF38 /* StructureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StructureViewController.h; sourceTree = "<group>"; };
 		BF798788148F43ED00F2AF38 /* StructureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StructureViewController.m; sourceTree = "<group>"; };
+		BF99A0EA1491E1BC00E4E97F /* StructureTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StructureTableViewCell.h; sourceTree = "<group>"; };
+		BF99A0EB1491E1BC00E4E97F /* StructureTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StructureTableViewCell.m; sourceTree = "<group>"; };
+		BF99A0ED1491E1DE00E4E97F /* StructureTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StructureTableViewCell.xib; sourceTree = "<group>"; };
+		BF99A0F01491E4A700E4E97F /* human_worker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = human_worker.png; sourceTree = "<group>"; };
+		BF99A0F11491E4A700E4E97F /* human_base.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = human_base.png; sourceTree = "<group>"; };
+		BF99A0F41491E4E700E4E97F /* AssetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetManager.h; sourceTree = "<group>"; };
+		BF99A0F51491E4E700E4E97F /* AssetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetManager.m; sourceTree = "<group>"; };
 		BFB141B2148B277200923D51 /* Macro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Macro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB141B6148B277200923D51 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BFB141B8148B277200923D51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -129,12 +141,34 @@
 		BF798785148F43B700F2AF38 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				BF99A0E81491E17D00E4E97F /* UI Elements */,
 				BFB141C8148B277200923D51 /* MACViewController.h */,
 				BFB141C9148B277200923D51 /* MACViewController.m */,
 				BF798787148F43ED00F2AF38 /* StructureViewController.h */,
 				BF798788148F43ED00F2AF38 /* StructureViewController.m */,
 			);
 			name = Scenes;
+			sourceTree = "<group>";
+		};
+		BF99A0E81491E17D00E4E97F /* UI Elements */ = {
+			isa = PBXGroup;
+			children = (
+				BF99A0EA1491E1BC00E4E97F /* StructureTableViewCell.h */,
+				BF99A0EB1491E1BC00E4E97F /* StructureTableViewCell.m */,
+				BF99A0ED1491E1DE00E4E97F /* StructureTableViewCell.xib */,
+			);
+			name = "UI Elements";
+			sourceTree = "<group>";
+		};
+		BF99A0EF1491E29800E4E97F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BF99A0F01491E4A700E4E97F /* human_worker.png */,
+				BF99A0F11491E4A700E4E97F /* human_base.png */,
+				BF99A0F41491E4E700E4E97F /* AssetManager.h */,
+				BF99A0F51491E4E700E4E97F /* AssetManager.m */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		BFB141A7148B277200923D51 = {
@@ -168,6 +202,7 @@
 		BFB141BC148B277200923D51 /* Macro */ = {
 			isa = PBXGroup;
 			children = (
+				BF99A0EF1491E29800E4E97F /* Assets */,
 				BF798785148F43B700F2AF38 /* Scenes */,
 				BFB141D6148B2BA900923D51 /* Model */,
 				BFB141C5148B277200923D51 /* MACAppDelegate.h */,
@@ -353,6 +388,9 @@
 				BFB141C1148B277200923D51 /* InfoPlist.strings in Resources */,
 				BFB141CD148B277200923D51 /* MACViewController_iPhone.xib in Resources */,
 				BFB141D0148B277200923D51 /* MACViewController_iPad.xib in Resources */,
+				BF99A0EE1491E1DE00E4E97F /* StructureTableViewCell.xib in Resources */,
+				BF99A0F21491E4A700E4E97F /* human_worker.png in Resources */,
+				BF99A0F31491E4A700E4E97F /* human_base.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +419,8 @@
 				BFB14207148C431500923D51 /* RobotWorker.m in Sources */,
 				BFB1420A148C469900923D51 /* Worker.m in Sources */,
 				BF798789148F43ED00F2AF38 /* StructureViewController.m in Sources */,
+				BF99A0EC1491E1BC00E4E97F /* StructureTableViewCell.m in Sources */,
+				BF99A0F61491E4E700E4E97F /* AssetManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

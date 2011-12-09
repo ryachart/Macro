@@ -36,7 +36,6 @@
     for (Player *player in self.players){
         [player update:interval];
     }
-    NSLog(@"%1.2f", gameDuration);
 }
 
 -(Player*)localPlayer{

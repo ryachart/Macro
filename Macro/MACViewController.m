@@ -11,6 +11,8 @@
 
 #import "StructureViewController.h"
 
+#import "StructureTableViewCell.h"
+
 #import "GameInstance.h"
 #import "Player.h"
 #import "Structure.h"
@@ -52,7 +54,13 @@
 }
 
 -(void)display{
-     [self.tableView reloadData];
+    for (UITableViewCell* cell in self.tableView.visibleCells){
+        if ([cell respondsToSelector:@selector(update)]){
+            [(StructureTableViewCell*)cell update];
+        }
+    }
+    //Reload the status cells
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
 }
 #pragma mark - View lifecycle
 
@@ -117,14 +125,16 @@
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString* cellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (!cell){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
+    static NSString* cellIdentifier2 = @"Cell2";
+    UITableViewCell *cell;
+
     
     //Cell Configuration
     if (indexPath.section == 0){
+        cell  = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if (!cell){
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        }
         switch (indexPath.row) {
             case 0:
                 cell.textLabel.text = [NSString stringWithFormat:@"Minerals: %i", self.gameInstance.localPlayer.minerals];
@@ -140,13 +150,15 @@
         }
     }
     else if (indexPath.section == 1){
-        Structure *currentStructure = [self.gameInstance.localPlayer.structures objectAtIndex:[indexPath row]];
-        cell.textLabel.text = [currentStructure title];
-        if (currentStructure.inProgressUnits.count > 0){
-            CFTimeInterval elapsedTime = ((Physical*)[currentStructure.inProgressUnits objectAtIndex:0]).elapsedBuildingProgress;
-            CFTimeInterval totalTime = ((Physical*)[currentStructure.inProgressUnits objectAtIndex:0]).buildTime;
-            cell.textLabel.text = [NSString stringWithFormat:@"%@ Building: %1.1f/%1.1f", [currentStructure title], elapsedTime, totalTime];
+        cell  = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier2];
+        if (!cell){
+            cell = [[StructureTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         }
+        Structure *currentStructure = [self.gameInstance.localPlayer.structures objectAtIndex:[indexPath row]];
+        
+        [(StructureTableViewCell*)cell setStructure:currentStructure];
+    
+        
     }
     return cell;
 }
@@ -156,7 +168,7 @@
     if (indexPath.section == 1){
         Structure *currentStructure = [self.gameInstance.localPlayer.structures objectAtIndex:[indexPath row]];
         StructureViewController *structureVC = [[StructureViewController alloc] initWithGameInstance:self.gameInstance andStructure:currentStructure];
-        [self.navigationController pushViewController:structureVC animated:NO];
+        [self.navigationController pushViewController:structureVC animated:YES];
     }
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];

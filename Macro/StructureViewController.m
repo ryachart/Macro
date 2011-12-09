@@ -11,6 +11,7 @@
 #import "Structure.h"
 #import "Species.h"
 #import "Unit.h"
+#import "StructureTableViewCell.h"
 
 @implementation StructureViewController
 @synthesize gameInstance;
