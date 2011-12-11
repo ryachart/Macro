@@ -16,7 +16,7 @@
 @synthesize buildingUnitImageView;
 @synthesize buildingUnitProgressView;
 @synthesize structureIconImageView;
-
+@synthesize infoLabel;
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"StructureTableViewCell" owner:self options:nil];
@@ -31,20 +31,19 @@
 }
 -(void)setStructure:(Structure*)newStructure{
     [structure release];
-    [structure removeObserver:self forKeyPath:@"isConstructing"];
     structure = [newStructure retain];
     
     self.structureIconImageView.image = [AssetManager imageForTitle:structure.title];
-    [structure addObserver:self forKeyPath:@"isConstructing" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 
 -(void)update{
-    if (self.structure){
+    if (self.structure && !self.structure.isBuilding){
         if (!self.structureIconImageView){
             self.structureIconImageView.image = [AssetManager imageForTitle:structure.title];
         }
         if (self.structure.inProgressUnits.count > 0){
+            self.infoLabel.text = @"Building:";
             Physical *inProgressUnit = [structure.inProgressUnits objectAtIndex:0];
             self.buildingUnitProgressView.hidden = NO;
             self.buildingUnitImageView.hidden = NO;
@@ -55,7 +54,14 @@
             self.buildingUnitImageView.image = nil;
             self.buildingUnitProgressView.progress = 0.0;
             self.buildingUnitProgressView.hidden = YES;
+            self.infoLabel.text = @"Idle";
         }
+    }else if (self.structure && self.structure.isBuilding){
+        self.buildingUnitProgressView.hidden = NO;
+        self.structureIconImageView.alpha = .5;
+        self.infoLabel.text = @"Under Constr.";
+        self.buildingUnitProgressView.progress = self.structure.elapsedBuildingProgress / self.structure.buildTime;
+    
     }
 }
 

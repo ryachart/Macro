@@ -32,6 +32,31 @@
     return self;
 }
 
+-(BOOL)hasStructureWithTitle:(NSString*)title{
+    return [self structuresWithTitle:title] > 0;
+}
+
+-(NSUInteger)structuresWithTitle:(NSString*)title{
+    NSInteger number = 0;
+    for (Structure *structure in self.structures){
+        if ([structure.title isEqualToString:title]){
+            number++;
+        }
+    }
+    return number;
+}
+
+-(void)buildStructure:(Structure*)structure{
+    if (self.minerals >= structure.mineralCost && self.gas >= structure.gasCost){
+        self.minerals -= structure.mineralCost;
+        self.gas -= structure.gasCost;
+        structure.isBuilding = YES;
+        [self addStructure:structure];
+    }else{
+        
+    }
+}
+
 -(void)addStructure:(Structure*)structure{
     [structure setOwner:self];
     [self.structures addObject:structure];
@@ -54,8 +79,9 @@
 }
 
 -(void)initializeForBasicGame{
-    
-    [self addStructure:[Species baseForSpecies:self.species]];
+    Structure *base = [Species baseForSpecies:self.species];
+    [base setIsBuilding:NO];
+    [self addStructure:base];
     
     for (int i = 0; i < BasicGame_InitialWorkers; i++){
         Worker *worker = [Species workerForSpecies:self.species];
@@ -78,6 +104,29 @@
     }
 }
 
+-(NSArray*)productionFacilities{
+    NSMutableArray *prodFacs = [NSMutableArray arrayWithCapacity:5];
+    
+    for (Structure *struc in self.structures){
+        if (struc.isBuilder){
+            [prodFacs addObject:struc];
+        }
+    }
+    return prodFacs;
+}
+
+-(NSArray*)infrastructure{
+    NSMutableArray *infra = [NSMutableArray arrayWithCapacity:5];
+    
+    for (Structure *struc in self.structures){
+        if (!struc.isBuilder){
+            [infra addObject:struc];
+        }
+    }
+    return infra;
+    
+}
+
 -(NSInteger)currentSupply{
     NSInteger currentSupply = 0;
     for (Unit* unit in self.units){
@@ -95,12 +144,14 @@
 -(NSInteger)maximumSupply{
     NSInteger maxSupply = 0;
     for (Structure *structure in self.structures){
-        maxSupply += structure.maximumSupplyContribution;
+        if (!structure.isBuilding){
+            maxSupply += structure.maximumSupplyContribution;
+        }
     }
     
     for (Unit *unit in self.units){
         maxSupply += unit.maximumSupplyContribution;
     }
-    return maxSupply;
+    return MIN(maxSupply, BasicGame_MaximumSupply);
 }
 @end

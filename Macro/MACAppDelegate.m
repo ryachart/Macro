@@ -14,13 +14,11 @@
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
-@synthesize navController = _navController;
 
 - (void)dealloc
 {
     [_window release];
     [_viewController release];
-    [_navController release];
     [super dealloc];
 }
 
@@ -30,12 +28,11 @@
     
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[[MACViewController alloc] initWithNibName:@"MACViewController_iPhone" bundle:nil] autorelease];
+        self.viewController = [[[MACViewController alloc] initWithNibName:nil bundle:nil] autorelease];
     } else {
-        self.viewController = [[[MACViewController alloc] initWithNibName:@"MACViewController_iPad" bundle:nil] autorelease];
+        self.viewController = [[[MACViewController alloc] initWithNibName:nil bundle:nil] autorelease];
     }
-    self.navController = [[[UINavigationController alloc] initWithRootViewController:self.viewController] autorelease];
-    self.window.rootViewController = self.navController;
+    self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -13,6 +13,8 @@
     if (self = [super init]){
         self.maximumSupplyContribution = 10;
         self.structureName = @"HumanBase";
+        self.isBuilder = YES;
+        self.mineralCost = 400;
     }
     return self;
 }

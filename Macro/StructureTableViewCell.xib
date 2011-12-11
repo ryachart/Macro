@@ -67,8 +67,8 @@
 							</object>
 							<object class="IBUILabel" id="200311851">
 								<reference key="NSNextResponder" ref="314342520"/>
-								<int key="NSvFlags">-2147483356</int>
-								<string key="NSFrame">{{122, 19}, {150, 21}}</string>
+								<int key="NSvFlags">292</int>
+								<string key="NSFrame">{{85, 18}, {150, 21}}</string>
 								<reference key="NSSuperview" ref="314342520"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="70078318"/>
@@ -102,7 +102,6 @@
 								<string key="NSFrame">{{243, 0}, {60, 60}}</string>
 								<reference key="NSSuperview" ref="314342520"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:567</string>
 								<int key="IBUIContentMode">2</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -159,6 +158,14 @@
 						<reference key="destination" ref="70078318"/>
 					</object>
 					<int key="connectionID">17</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">infoLabel</string>
+						<reference key="source" ref="57875462"/>
+						<reference key="destination" ref="200311851"/>
+					</object>
+					<int key="connectionID">19</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -229,7 +236,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">17</int>
+			<int key="maxID">19</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -239,6 +246,7 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="buildingUnitImageView">UIImageView</string>
 						<string key="buildingUnitProgressView">UIProgressView</string>
+						<string key="infoLabel">UILabel</string>
 						<string key="structureIconImageView">UIImageView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -249,6 +257,10 @@
 						<object class="IBToOneOutletInfo" key="buildingUnitProgressView">
 							<string key="name">buildingUnitProgressView</string>
 							<string key="candidateClassName">UIProgressView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="infoLabel">
+							<string key="name">infoLabel</string>
+							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="structureIconImageView">
 							<string key="name">structureIconImageView</string>

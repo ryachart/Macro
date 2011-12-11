@@ -36,13 +36,13 @@
 }
 
 -(void)update:(CFTimeInterval)interval{
-    if (isBuilding){
+    if (self.isBuilding){
         elapsedBuildingProgress += interval;
     }
     
-    if (elapsedBuildingProgress >= buildTime){
-        elapsedBuildingProgress = 0.0;
-        isBuilding = NO;
+    if (self.elapsedBuildingProgress >= self.buildTime){
+        self.elapsedBuildingProgress = 0.0;
+        self.isBuilding = NO;
     }
     
 }

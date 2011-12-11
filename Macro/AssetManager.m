@@ -28,6 +28,10 @@
     
     image = [dictionaryOfAssets objectForKey:title];
     
+    if (!image){
+        image = [UIImage imageNamed:@"SC2_icon"];
+    }
+    
     return image;
 }
 

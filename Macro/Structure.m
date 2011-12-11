@@ -41,6 +41,7 @@
 }
 
 -(void)update:(CFTimeInterval)interval{
+    [super update:interval];
     for (Unit *unit in self.inProgressUnits){
         if (![unit isBuilding]){
             [self.owner addUnit:unit];

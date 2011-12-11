@@ -17,6 +17,7 @@
 @property (nonatomic, retain) IBOutlet UIImageView *structureIconImageView;
 @property (nonatomic, retain) IBOutlet UIImageView *buildingUnitImageView;
 @property (nonatomic, retain) IBOutlet UIProgressView *buildingUnitProgressView;
+@property (nonatomic, retain) IBOutlet UILabel *infoLabel;
 
 -(void)update;
 @end

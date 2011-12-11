@@ -16,6 +16,7 @@
 #import "BugBase.h"
 #import "HumanBase.h"
 #import "RobotBase.h"
+#import "HumanSupplyDepot.h"
 
 @interface Species ()
 +(NSArray*)bugUnitsFromStructure:(Structure*)structure;
@@ -59,6 +60,24 @@
             break;
     }
     return [structureToReturn autorelease];
+}
+
++(NSArray*)availableStructuresForPlayer:(Player*)player{
+    NSMutableArray *availableStructures = [NSMutableArray arrayWithCapacity:20];
+    switch (player.species) {
+        case Bugs:
+            break;
+        case Humans:
+            if ([player hasStructureWithTitle:@"HumanBase"]){
+                [availableStructures addObject:[[HumanSupplyDepot new] autorelease]];
+            }
+            break;
+        case Robots:
+            break;
+        default:
+            break;
+    }
+    return availableStructures;
 }
 
 +(NSArray*)availableUnitsForPlayer:(Player*)player fromStructure:(Structure*)structure{

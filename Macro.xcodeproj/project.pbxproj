@@ -20,9 +20,8 @@
 		BFB141C1148B277200923D51 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFB141BF148B277200923D51 /* InfoPlist.strings */; };
 		BFB141C3148B277200923D51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141C2148B277200923D51 /* main.m */; };
 		BFB141C7148B277200923D51 /* MACAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141C6148B277200923D51 /* MACAppDelegate.m */; };
-		BFB141CA148B277200923D51 /* MACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141C9148B277200923D51 /* MACViewController.m */; };
-		BFB141CD148B277200923D51 /* MACViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB141CB148B277200923D51 /* MACViewController_iPhone.xib */; };
-		BFB141D0148B277200923D51 /* MACViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB141CE148B277200923D51 /* MACViewController_iPad.xib */; };
+		BFB141CA148B277200923D51 /* MainGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141C9148B277200923D51 /* MainGameViewController.m */; };
+		BFB141CD148B277200923D51 /* MainGameViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB141CB148B277200923D51 /* MainGameViewController_iPhone.xib */; };
 		BFB141D9148B2E7600923D51 /* GameInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141D8148B2E7600923D51 /* GameInstance.m */; };
 		BFB141DC148B2E8D00923D51 /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141DB148B2E8D00923D51 /* Unit.m */; };
 		BFB141DF148B2E9800923D51 /* Structure.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141DE148B2E9800923D51 /* Structure.m */; };
@@ -37,6 +36,11 @@
 		BFB14204148C40A900923D51 /* HumanWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB14203148C40A900923D51 /* HumanWorker.m */; };
 		BFB14207148C431500923D51 /* RobotWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB14206148C431500923D51 /* RobotWorker.m */; };
 		BFB1420A148C469900923D51 /* Worker.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB14209148C469800923D51 /* Worker.m */; };
+		BFFCE0461493FD52004422A6 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFCE0451493FD52004422A6 /* GameKit.framework */; };
+		BFFCE04A1494129B004422A6 /* MACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFCE0491494129B004422A6 /* MACViewController.m */; };
+		BFFCE04D14943BD7004422A6 /* BuilderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFCE04C14943BD7004422A6 /* BuilderViewController.m */; };
+		BFFCE05014943C78004422A6 /* HumanSupplyDepot.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFCE04F14943C78004422A6 /* HumanSupplyDepot.m */; };
+		BFFCE0521494AB46004422A6 /* SC2_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFCE0511494AB46004422A6 /* SC2_icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,10 +64,9 @@
 		BFB141C4148B277200923D51 /* Macro-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Macro-Prefix.pch"; sourceTree = "<group>"; };
 		BFB141C5148B277200923D51 /* MACAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MACAppDelegate.h; sourceTree = "<group>"; };
 		BFB141C6148B277200923D51 /* MACAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MACAppDelegate.m; sourceTree = "<group>"; };
-		BFB141C8148B277200923D51 /* MACViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MACViewController.h; sourceTree = "<group>"; };
-		BFB141C9148B277200923D51 /* MACViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MACViewController.m; sourceTree = "<group>"; };
-		BFB141CC148B277200923D51 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MACViewController_iPhone.xib; sourceTree = "<group>"; };
-		BFB141CF148B277200923D51 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MACViewController_iPad.xib; sourceTree = "<group>"; };
+		BFB141C8148B277200923D51 /* MainGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainGameViewController.h; sourceTree = "<group>"; };
+		BFB141C9148B277200923D51 /* MainGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainGameViewController.m; sourceTree = "<group>"; };
+		BFB141CC148B277200923D51 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainGameViewController_iPhone.xib; sourceTree = "<group>"; };
 		BFB141D7148B2E7600923D51 /* GameInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameInstance.h; sourceTree = "<group>"; };
 		BFB141D8148B2E7600923D51 /* GameInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameInstance.m; sourceTree = "<group>"; };
 		BFB141DA148B2E8D00923D51 /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unit.h; sourceTree = "<group>"; };
@@ -92,6 +95,14 @@
 		BFB14206148C431500923D51 /* RobotWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotWorker.m; sourceTree = "<group>"; };
 		BFB14208148C469800923D51 /* Worker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Worker.h; sourceTree = "<group>"; };
 		BFB14209148C469800923D51 /* Worker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Worker.m; sourceTree = "<group>"; };
+		BFFCE0451493FD52004422A6 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		BFFCE0481494129B004422A6 /* MACViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACViewController.h; sourceTree = "<group>"; };
+		BFFCE0491494129B004422A6 /* MACViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACViewController.m; sourceTree = "<group>"; };
+		BFFCE04B14943BD7004422A6 /* BuilderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuilderViewController.h; sourceTree = "<group>"; };
+		BFFCE04C14943BD7004422A6 /* BuilderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuilderViewController.m; sourceTree = "<group>"; };
+		BFFCE04E14943C78004422A6 /* HumanSupplyDepot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HumanSupplyDepot.h; sourceTree = "<group>"; };
+		BFFCE04F14943C78004422A6 /* HumanSupplyDepot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HumanSupplyDepot.m; sourceTree = "<group>"; };
+		BFFCE0511494AB46004422A6 /* SC2_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SC2_icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFFCE0461493FD52004422A6 /* GameKit.framework in Frameworks */,
 				BF052F28148DDC1C00CD53A5 /* QuartzCore.framework in Frameworks */,
 				BFB141B7148B277200923D51 /* UIKit.framework in Frameworks */,
 				BFB141B9148B277200923D51 /* Foundation.framework in Frameworks */,
@@ -142,10 +154,13 @@
 			isa = PBXGroup;
 			children = (
 				BF99A0E81491E17D00E4E97F /* UI Elements */,
-				BFB141C8148B277200923D51 /* MACViewController.h */,
-				BFB141C9148B277200923D51 /* MACViewController.m */,
+				BFB141C8148B277200923D51 /* MainGameViewController.h */,
+				BFB141C9148B277200923D51 /* MainGameViewController.m */,
 				BF798787148F43ED00F2AF38 /* StructureViewController.h */,
 				BF798788148F43ED00F2AF38 /* StructureViewController.m */,
+				BFFCE04B14943BD7004422A6 /* BuilderViewController.h */,
+				BFFCE04C14943BD7004422A6 /* BuilderViewController.m */,
+				BFB141CB148B277200923D51 /* MainGameViewController_iPhone.xib */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -163,6 +178,7 @@
 		BF99A0EF1491E29800E4E97F /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				BFFCE0511494AB46004422A6 /* SC2_icon.png */,
 				BF99A0F01491E4A700E4E97F /* human_worker.png */,
 				BF99A0F11491E4A700E4E97F /* human_base.png */,
 				BF99A0F41491E4E700E4E97F /* AssetManager.h */,
@@ -191,6 +207,7 @@
 		BFB141B5148B277200923D51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFFCE0451493FD52004422A6 /* GameKit.framework */,
 				BF052F27148DDC1C00CD53A5 /* QuartzCore.framework */,
 				BFB141B6148B277200923D51 /* UIKit.framework */,
 				BFB141B8148B277200923D51 /* Foundation.framework */,
@@ -207,9 +224,9 @@
 				BFB141D6148B2BA900923D51 /* Model */,
 				BFB141C5148B277200923D51 /* MACAppDelegate.h */,
 				BFB141C6148B277200923D51 /* MACAppDelegate.m */,
-				BFB141CB148B277200923D51 /* MACViewController_iPhone.xib */,
-				BFB141CE148B277200923D51 /* MACViewController_iPad.xib */,
 				BFB141BD148B277200923D51 /* Supporting Files */,
+				BFFCE0481494129B004422A6 /* MACViewController.h */,
+				BFFCE0491494129B004422A6 /* MACViewController.m */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -322,6 +339,8 @@
 			children = (
 				BFB141F9148C198B00923D51 /* HumanBase.h */,
 				BFB141FA148C198B00923D51 /* HumanBase.m */,
+				BFFCE04E14943C78004422A6 /* HumanSupplyDepot.h */,
+				BFFCE04F14943C78004422A6 /* HumanSupplyDepot.m */,
 			);
 			name = Structures;
 			sourceTree = "<group>";
@@ -386,11 +405,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFB141C1148B277200923D51 /* InfoPlist.strings in Resources */,
-				BFB141CD148B277200923D51 /* MACViewController_iPhone.xib in Resources */,
-				BFB141D0148B277200923D51 /* MACViewController_iPad.xib in Resources */,
+				BFB141CD148B277200923D51 /* MainGameViewController_iPhone.xib in Resources */,
 				BF99A0EE1491E1DE00E4E97F /* StructureTableViewCell.xib in Resources */,
 				BF99A0F21491E4A700E4E97F /* human_worker.png in Resources */,
 				BF99A0F31491E4A700E4E97F /* human_base.png in Resources */,
+				BFFCE0521494AB46004422A6 /* SC2_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +422,7 @@
 			files = (
 				BFB141C3148B277200923D51 /* main.m in Sources */,
 				BFB141C7148B277200923D51 /* MACAppDelegate.m in Sources */,
-				BFB141CA148B277200923D51 /* MACViewController.m in Sources */,
+				BFB141CA148B277200923D51 /* MainGameViewController.m in Sources */,
 				BFB141D9148B2E7600923D51 /* GameInstance.m in Sources */,
 				BFB141DC148B2E8D00923D51 /* Unit.m in Sources */,
 				BFB141DF148B2E9800923D51 /* Structure.m in Sources */,
@@ -421,6 +440,9 @@
 				BF798789148F43ED00F2AF38 /* StructureViewController.m in Sources */,
 				BF99A0EC1491E1BC00E4E97F /* StructureTableViewCell.m in Sources */,
 				BF99A0F61491E4E700E4E97F /* AssetManager.m in Sources */,
+				BFFCE04A1494129B004422A6 /* MACViewController.m in Sources */,
+				BFFCE04D14943BD7004422A6 /* BuilderViewController.m in Sources */,
+				BFFCE05014943C78004422A6 /* HumanSupplyDepot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,20 +457,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		BFB141CB148B277200923D51 /* MACViewController_iPhone.xib */ = {
+		BFB141CB148B277200923D51 /* MainGameViewController_iPhone.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BFB141CC148B277200923D51 /* en */,
 			);
-			name = MACViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		BFB141CE148B277200923D51 /* MACViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BFB141CF148B277200923D51 /* en */,
-			);
-			name = MACViewController_iPad.xib;
+			name = MainGameViewController_iPhone.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -502,10 +516,12 @@
 		BFB141D4148B277200923D51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Macro/Macro-Prefix.pch";
 				INFOPLIST_FILE = "Macro/Macro-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -513,10 +529,12 @@
 		BFB141D5148B277200923D51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Macro/Macro-Prefix.pch";
 				INFOPLIST_FILE = "Macro/Macro-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
