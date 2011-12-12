@@ -26,6 +26,7 @@
 //Health
 @property (nonatomic) NSInteger health;
 @property (nonatomic) NSInteger maximumHealth;
+@property (nonatomic) NSInteger armorValue;
 
 //Supply
 @property (nonatomic) NSInteger maximumSupplyContribution;

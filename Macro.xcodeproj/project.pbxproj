@@ -9,15 +9,19 @@
 /* Begin PBXBuildFile section */
 		BF052F28148DDC1C00CD53A5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF052F27148DDC1C00CD53A5 /* QuartzCore.framework */; };
 		BF798789148F43ED00F2AF38 /* StructureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF798788148F43ED00F2AF38 /* StructureViewController.m */; };
+		BF99A0EC1491E1BC00E4E97F /* StructureTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF99A0EB1491E1BC00E4E97F /* StructureTableViewCell.m */; };
+		BF99A0EE1491E1DE00E4E97F /* StructureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF99A0ED1491E1DE00E4E97F /* StructureTableViewCell.xib */; };
+		BF99A0F21491E4A700E4E97F /* human_worker.png in Resources */ = {isa = PBXBuildFile; fileRef = BF99A0F01491E4A700E4E97F /* human_worker.png */; };
+		BF99A0F31491E4A700E4E97F /* human_base.png in Resources */ = {isa = PBXBuildFile; fileRef = BF99A0F11491E4A700E4E97F /* human_base.png */; };
+		BF99A0F61491E4E700E4E97F /* AssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF99A0F51491E4E700E4E97F /* AssetManager.m */; };
 		BFB141B7148B277200923D51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB141B6148B277200923D51 /* UIKit.framework */; };
 		BFB141B9148B277200923D51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB141B8148B277200923D51 /* Foundation.framework */; };
 		BFB141BB148B277200923D51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB141BA148B277200923D51 /* CoreGraphics.framework */; };
 		BFB141C1148B277200923D51 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFB141BF148B277200923D51 /* InfoPlist.strings */; };
 		BFB141C3148B277200923D51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141C2148B277200923D51 /* main.m */; };
 		BFB141C7148B277200923D51 /* MACAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141C6148B277200923D51 /* MACAppDelegate.m */; };
-		BFB141CA148B277200923D51 /* MACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141C9148B277200923D51 /* MACViewController.m */; };
-		BFB141CD148B277200923D51 /* MACViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB141CB148B277200923D51 /* MACViewController_iPhone.xib */; };
-		BFB141D0148B277200923D51 /* MACViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB141CE148B277200923D51 /* MACViewController_iPad.xib */; };
+		BFB141CA148B277200923D51 /* MainGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141C9148B277200923D51 /* MainGameViewController.m */; };
+		BFB141CD148B277200923D51 /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB141CB148B277200923D51 /* BaseViewController.xib */; };
 		BFB141D9148B2E7600923D51 /* GameInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141D8148B2E7600923D51 /* GameInstance.m */; };
 		BFB141DC148B2E8D00923D51 /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141DB148B2E8D00923D51 /* Unit.m */; };
 		BFB141DF148B2E9800923D51 /* Structure.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB141DE148B2E9800923D51 /* Structure.m */; };
@@ -32,12 +36,45 @@
 		BFB14204148C40A900923D51 /* HumanWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB14203148C40A900923D51 /* HumanWorker.m */; };
 		BFB14207148C431500923D51 /* RobotWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB14206148C431500923D51 /* RobotWorker.m */; };
 		BFB1420A148C469900923D51 /* Worker.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB14209148C469800923D51 /* Worker.m */; };
+		BFCC62031495D7E2005E9923 /* HumanFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCC62021495D7E2005E9923 /* HumanFactory.m */; };
+		BFCC62071495D8C8005E9923 /* HumanHellion.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCC62061495D8C8005E9923 /* HumanHellion.m */; };
+		BFCC620A1495D939005E9923 /* HumanMarauder.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCC62091495D939005E9923 /* HumanMarauder.m */; };
+		BFCC620E1495DA19005E9923 /* human_marine.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCC620B1495DA19005E9923 /* human_marine.png */; };
+		BFCC620F1495DA19005E9923 /* human_marauder.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCC620C1495DA19005E9923 /* human_marauder.png */; };
+		BFCC62101495DA19005E9923 /* human_hellion.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCC620D1495DA19005E9923 /* human_hellion.png */; };
+		BFCC62121495DDF5005E9923 /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCC62111495DDF5005E9923 /* app_icon.png */; };
+		BFCC62141495DDF8005E9923 /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCC62131495DDF7005E9923 /* app_icon@2x.png */; };
+		BFFCE0461493FD52004422A6 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFCE0451493FD52004422A6 /* GameKit.framework */; };
+		BFFCE04A1494129B004422A6 /* MACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFCE0491494129B004422A6 /* MACViewController.m */; };
+		BFFCE04D14943BD7004422A6 /* BuilderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFCE04C14943BD7004422A6 /* BuilderViewController.m */; };
+		BFFCE05014943C78004422A6 /* HumanSupplyDepot.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFCE04F14943C78004422A6 /* HumanSupplyDepot.m */; };
+		BFFCE0521494AB46004422A6 /* SC2_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFCE0511494AB46004422A6 /* SC2_icon.png */; };
+		BFFCE05714959418004422A6 /* EconomyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFCE05614959418004422A6 /* EconomyTableViewCell.m */; };
+		BFFCE05914959430004422A6 /* EconomyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFCE05814959430004422A6 /* EconomyTableViewCell.xib */; };
+		BFFCE05C149594C5004422A6 /* geysur.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFCE05A149594C5004422A6 /* geysur.png */; };
+		BFFCE05D149594C5004422A6 /* mineral.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFCE05B149594C5004422A6 /* mineral.png */; };
+		BFFCE060149597AD004422A6 /* HumanBarracks.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFCE05F149597AD004422A6 /* HumanBarracks.m */; };
+		BFFCE0631495986F004422A6 /* HumanMarine.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFCE0621495986F004422A6 /* HumanMarine.m */; };
+		BFFCE06514959B7E004422A6 /* human_barracks.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFCE06414959B7E004422A6 /* human_barracks.png */; };
+		BFFCE0681495A293004422A6 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFCE0671495A292004422A6 /* BaseViewController.m */; };
+		BFFCE06B1495A5AE004422A6 /* UnitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFCE06A1495A5AC004422A6 /* UnitsViewController.m */; };
+		BFFCE0721495A5E9004422A6 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFCE0701495A5D8004422A6 /* MapViewController.m */; };
+		BFFCE0731495A5E9004422A6 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFCE0711495A5DD004422A6 /* MapViewController.xib */; };
+		BFFCE0761495C045004422A6 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFCE0751495C045004422A6 /* Location.m */; };
+		BFFCE0791495C47A004422A6 /* Basic1v1Map.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFCE0781495C479004422A6 /* Basic1v1Map.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BF052F27148DDC1C00CD53A5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BF798787148F43ED00F2AF38 /* StructureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StructureViewController.h; sourceTree = "<group>"; };
 		BF798788148F43ED00F2AF38 /* StructureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StructureViewController.m; sourceTree = "<group>"; };
+		BF99A0EA1491E1BC00E4E97F /* StructureTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StructureTableViewCell.h; sourceTree = "<group>"; };
+		BF99A0EB1491E1BC00E4E97F /* StructureTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StructureTableViewCell.m; sourceTree = "<group>"; };
+		BF99A0ED1491E1DE00E4E97F /* StructureTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StructureTableViewCell.xib; sourceTree = "<group>"; };
+		BF99A0F01491E4A700E4E97F /* human_worker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = human_worker.png; sourceTree = "<group>"; };
+		BF99A0F11491E4A700E4E97F /* human_base.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = human_base.png; sourceTree = "<group>"; };
+		BF99A0F41491E4E700E4E97F /* AssetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetManager.h; sourceTree = "<group>"; };
+		BF99A0F51491E4E700E4E97F /* AssetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetManager.m; sourceTree = "<group>"; };
 		BFB141B2148B277200923D51 /* Macro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Macro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB141B6148B277200923D51 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BFB141B8148B277200923D51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -48,10 +85,9 @@
 		BFB141C4148B277200923D51 /* Macro-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Macro-Prefix.pch"; sourceTree = "<group>"; };
 		BFB141C5148B277200923D51 /* MACAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MACAppDelegate.h; sourceTree = "<group>"; };
 		BFB141C6148B277200923D51 /* MACAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MACAppDelegate.m; sourceTree = "<group>"; };
-		BFB141C8148B277200923D51 /* MACViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MACViewController.h; sourceTree = "<group>"; };
-		BFB141C9148B277200923D51 /* MACViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MACViewController.m; sourceTree = "<group>"; };
-		BFB141CC148B277200923D51 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MACViewController_iPhone.xib; sourceTree = "<group>"; };
-		BFB141CF148B277200923D51 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MACViewController_iPad.xib; sourceTree = "<group>"; };
+		BFB141C8148B277200923D51 /* MainGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainGameViewController.h; sourceTree = "<group>"; };
+		BFB141C9148B277200923D51 /* MainGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainGameViewController.m; sourceTree = "<group>"; };
+		BFB141CC148B277200923D51 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BaseViewController.xib; sourceTree = "<group>"; };
 		BFB141D7148B2E7600923D51 /* GameInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameInstance.h; sourceTree = "<group>"; };
 		BFB141D8148B2E7600923D51 /* GameInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameInstance.m; sourceTree = "<group>"; };
 		BFB141DA148B2E8D00923D51 /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unit.h; sourceTree = "<group>"; };
@@ -80,6 +116,46 @@
 		BFB14206148C431500923D51 /* RobotWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotWorker.m; sourceTree = "<group>"; };
 		BFB14208148C469800923D51 /* Worker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Worker.h; sourceTree = "<group>"; };
 		BFB14209148C469800923D51 /* Worker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Worker.m; sourceTree = "<group>"; };
+		BFCC62011495D7E2005E9923 /* HumanFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HumanFactory.h; sourceTree = "<group>"; };
+		BFCC62021495D7E2005E9923 /* HumanFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HumanFactory.m; sourceTree = "<group>"; };
+		BFCC62051495D8C8005E9923 /* HumanHellion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HumanHellion.h; sourceTree = "<group>"; };
+		BFCC62061495D8C8005E9923 /* HumanHellion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HumanHellion.m; sourceTree = "<group>"; };
+		BFCC62081495D939005E9923 /* HumanMarauder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HumanMarauder.h; sourceTree = "<group>"; };
+		BFCC62091495D939005E9923 /* HumanMarauder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HumanMarauder.m; sourceTree = "<group>"; };
+		BFCC620B1495DA19005E9923 /* human_marine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = human_marine.png; sourceTree = "<group>"; };
+		BFCC620C1495DA19005E9923 /* human_marauder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = human_marauder.png; sourceTree = "<group>"; };
+		BFCC620D1495DA19005E9923 /* human_hellion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = human_hellion.png; sourceTree = "<group>"; };
+		BFCC62111495DDF5005E9923 /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon.png; sourceTree = "<group>"; };
+		BFCC62131495DDF7005E9923 /* app_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon@2x.png"; sourceTree = "<group>"; };
+		BFFCE0451493FD52004422A6 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		BFFCE0481494129B004422A6 /* MACViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACViewController.h; sourceTree = "<group>"; };
+		BFFCE0491494129B004422A6 /* MACViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACViewController.m; sourceTree = "<group>"; };
+		BFFCE04B14943BD7004422A6 /* BuilderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuilderViewController.h; sourceTree = "<group>"; };
+		BFFCE04C14943BD7004422A6 /* BuilderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuilderViewController.m; sourceTree = "<group>"; };
+		BFFCE04E14943C78004422A6 /* HumanSupplyDepot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HumanSupplyDepot.h; sourceTree = "<group>"; };
+		BFFCE04F14943C78004422A6 /* HumanSupplyDepot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HumanSupplyDepot.m; sourceTree = "<group>"; };
+		BFFCE0511494AB46004422A6 /* SC2_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SC2_icon.png; sourceTree = "<group>"; };
+		BFFCE05514959418004422A6 /* EconomyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EconomyTableViewCell.h; sourceTree = "<group>"; };
+		BFFCE05614959418004422A6 /* EconomyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EconomyTableViewCell.m; sourceTree = "<group>"; };
+		BFFCE05814959430004422A6 /* EconomyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EconomyTableViewCell.xib; sourceTree = "<group>"; };
+		BFFCE05A149594C5004422A6 /* geysur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = geysur.png; sourceTree = "<group>"; };
+		BFFCE05B149594C5004422A6 /* mineral.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mineral.png; sourceTree = "<group>"; };
+		BFFCE05E149597AC004422A6 /* HumanBarracks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HumanBarracks.h; sourceTree = "<group>"; };
+		BFFCE05F149597AD004422A6 /* HumanBarracks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HumanBarracks.m; sourceTree = "<group>"; };
+		BFFCE0611495986F004422A6 /* HumanMarine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HumanMarine.h; sourceTree = "<group>"; };
+		BFFCE0621495986F004422A6 /* HumanMarine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HumanMarine.m; sourceTree = "<group>"; };
+		BFFCE06414959B7E004422A6 /* human_barracks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = human_barracks.png; sourceTree = "<group>"; };
+		BFFCE0661495A292004422A6 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		BFFCE0671495A292004422A6 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		BFFCE0691495A5AC004422A6 /* UnitsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitsViewController.h; sourceTree = "<group>"; };
+		BFFCE06A1495A5AC004422A6 /* UnitsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitsViewController.m; sourceTree = "<group>"; };
+		BFFCE06F1495A5D6004422A6 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		BFFCE0701495A5D8004422A6 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		BFFCE0711495A5DD004422A6 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		BFFCE0741495C045004422A6 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		BFFCE0751495C045004422A6 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		BFFCE0771495C479004422A6 /* Basic1v1Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Basic1v1Map.h; sourceTree = "<group>"; };
+		BFFCE0781495C479004422A6 /* Basic1v1Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Basic1v1Map.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFFCE0461493FD52004422A6 /* GameKit.framework in Frameworks */,
 				BF052F28148DDC1C00CD53A5 /* QuartzCore.framework in Frameworks */,
 				BFB141B7148B277200923D51 /* UIKit.framework in Frameworks */,
 				BFB141B9148B277200923D51 /* Foundation.framework in Frameworks */,
@@ -113,6 +190,10 @@
 			children = (
 				BFB141E3148C137A00923D51 /* Map.h */,
 				BFB141E4148C137A00923D51 /* Map.m */,
+				BFFCE0741495C045004422A6 /* Location.h */,
+				BFFCE0751495C045004422A6 /* Location.m */,
+				BFFCE0771495C479004422A6 /* Basic1v1Map.h */,
+				BFFCE0781495C479004422A6 /* Basic1v1Map.m */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -129,17 +210,61 @@
 		BF798785148F43B700F2AF38 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				BFB141C8148B277200923D51 /* MACViewController.h */,
-				BFB141C9148B277200923D51 /* MACViewController.m */,
+				BF99A0E81491E17D00E4E97F /* UI Elements */,
+				BFB141C8148B277200923D51 /* MainGameViewController.h */,
+				BFB141C9148B277200923D51 /* MainGameViewController.m */,
 				BF798787148F43ED00F2AF38 /* StructureViewController.h */,
 				BF798788148F43ED00F2AF38 /* StructureViewController.m */,
+				BFFCE04B14943BD7004422A6 /* BuilderViewController.h */,
+				BFFCE04C14943BD7004422A6 /* BuilderViewController.m */,
+				BFB141CB148B277200923D51 /* BaseViewController.xib */,
+				BFFCE0661495A292004422A6 /* BaseViewController.h */,
+				BFFCE0671495A292004422A6 /* BaseViewController.m */,
+				BFFCE0691495A5AC004422A6 /* UnitsViewController.h */,
+				BFFCE06A1495A5AC004422A6 /* UnitsViewController.m */,
+				BFFCE06F1495A5D6004422A6 /* MapViewController.h */,
+				BFFCE0701495A5D8004422A6 /* MapViewController.m */,
+				BFFCE0711495A5DD004422A6 /* MapViewController.xib */,
 			);
 			name = Scenes;
+			sourceTree = "<group>";
+		};
+		BF99A0E81491E17D00E4E97F /* UI Elements */ = {
+			isa = PBXGroup;
+			children = (
+				BF99A0EA1491E1BC00E4E97F /* StructureTableViewCell.h */,
+				BF99A0EB1491E1BC00E4E97F /* StructureTableViewCell.m */,
+				BF99A0ED1491E1DE00E4E97F /* StructureTableViewCell.xib */,
+				BFFCE05514959418004422A6 /* EconomyTableViewCell.h */,
+				BFFCE05614959418004422A6 /* EconomyTableViewCell.m */,
+				BFFCE05814959430004422A6 /* EconomyTableViewCell.xib */,
+			);
+			name = "UI Elements";
+			sourceTree = "<group>";
+		};
+		BF99A0EF1491E29800E4E97F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BFCC620B1495DA19005E9923 /* human_marine.png */,
+				BFCC620C1495DA19005E9923 /* human_marauder.png */,
+				BFCC620D1495DA19005E9923 /* human_hellion.png */,
+				BFFCE06414959B7E004422A6 /* human_barracks.png */,
+				BFFCE0511494AB46004422A6 /* SC2_icon.png */,
+				BF99A0F01491E4A700E4E97F /* human_worker.png */,
+				BF99A0F11491E4A700E4E97F /* human_base.png */,
+				BF99A0F41491E4E700E4E97F /* AssetManager.h */,
+				BF99A0F51491E4E700E4E97F /* AssetManager.m */,
+				BFFCE05A149594C5004422A6 /* geysur.png */,
+				BFFCE05B149594C5004422A6 /* mineral.png */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		BFB141A7148B277200923D51 = {
 			isa = PBXGroup;
 			children = (
+				BFCC62131495DDF7005E9923 /* app_icon@2x.png */,
+				BFCC62111495DDF5005E9923 /* app_icon.png */,
 				BFB141BC148B277200923D51 /* Macro */,
 				BFB141B5148B277200923D51 /* Frameworks */,
 				BFB141B3148B277200923D51 /* Products */,
@@ -157,6 +282,7 @@
 		BFB141B5148B277200923D51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFFCE0451493FD52004422A6 /* GameKit.framework */,
 				BF052F27148DDC1C00CD53A5 /* QuartzCore.framework */,
 				BFB141B6148B277200923D51 /* UIKit.framework */,
 				BFB141B8148B277200923D51 /* Foundation.framework */,
@@ -168,13 +294,14 @@
 		BFB141BC148B277200923D51 /* Macro */ = {
 			isa = PBXGroup;
 			children = (
+				BF99A0EF1491E29800E4E97F /* Assets */,
 				BF798785148F43B700F2AF38 /* Scenes */,
 				BFB141D6148B2BA900923D51 /* Model */,
 				BFB141C5148B277200923D51 /* MACAppDelegate.h */,
 				BFB141C6148B277200923D51 /* MACAppDelegate.m */,
-				BFB141CB148B277200923D51 /* MACViewController_iPhone.xib */,
-				BFB141CE148B277200923D51 /* MACViewController_iPad.xib */,
 				BFB141BD148B277200923D51 /* Supporting Files */,
+				BFFCE0481494129B004422A6 /* MACViewController.h */,
+				BFFCE0491494129B004422A6 /* MACViewController.m */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -269,6 +396,12 @@
 			children = (
 				BFB14202148C40A900923D51 /* HumanWorker.h */,
 				BFB14203148C40A900923D51 /* HumanWorker.m */,
+				BFFCE0611495986F004422A6 /* HumanMarine.h */,
+				BFFCE0621495986F004422A6 /* HumanMarine.m */,
+				BFCC62051495D8C8005E9923 /* HumanHellion.h */,
+				BFCC62061495D8C8005E9923 /* HumanHellion.m */,
+				BFCC62081495D939005E9923 /* HumanMarauder.h */,
+				BFCC62091495D939005E9923 /* HumanMarauder.m */,
 			);
 			name = Units;
 			sourceTree = "<group>";
@@ -287,6 +420,12 @@
 			children = (
 				BFB141F9148C198B00923D51 /* HumanBase.h */,
 				BFB141FA148C198B00923D51 /* HumanBase.m */,
+				BFFCE04E14943C78004422A6 /* HumanSupplyDepot.h */,
+				BFFCE04F14943C78004422A6 /* HumanSupplyDepot.m */,
+				BFFCE05E149597AC004422A6 /* HumanBarracks.h */,
+				BFFCE05F149597AD004422A6 /* HumanBarracks.m */,
+				BFCC62011495D7E2005E9923 /* HumanFactory.h */,
+				BFCC62021495D7E2005E9923 /* HumanFactory.m */,
 			);
 			name = Structures;
 			sourceTree = "<group>";
@@ -351,8 +490,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFB141C1148B277200923D51 /* InfoPlist.strings in Resources */,
-				BFB141CD148B277200923D51 /* MACViewController_iPhone.xib in Resources */,
-				BFB141D0148B277200923D51 /* MACViewController_iPad.xib in Resources */,
+				BFB141CD148B277200923D51 /* BaseViewController.xib in Resources */,
+				BF99A0EE1491E1DE00E4E97F /* StructureTableViewCell.xib in Resources */,
+				BF99A0F21491E4A700E4E97F /* human_worker.png in Resources */,
+				BF99A0F31491E4A700E4E97F /* human_base.png in Resources */,
+				BFFCE0521494AB46004422A6 /* SC2_icon.png in Resources */,
+				BFFCE05914959430004422A6 /* EconomyTableViewCell.xib in Resources */,
+				BFFCE05C149594C5004422A6 /* geysur.png in Resources */,
+				BFFCE05D149594C5004422A6 /* mineral.png in Resources */,
+				BFFCE06514959B7E004422A6 /* human_barracks.png in Resources */,
+				BFFCE0731495A5E9004422A6 /* MapViewController.xib in Resources */,
+				BFCC620E1495DA19005E9923 /* human_marine.png in Resources */,
+				BFCC620F1495DA19005E9923 /* human_marauder.png in Resources */,
+				BFCC62101495DA19005E9923 /* human_hellion.png in Resources */,
+				BFCC62121495DDF5005E9923 /* app_icon.png in Resources */,
+				BFCC62141495DDF8005E9923 /* app_icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +517,7 @@
 			files = (
 				BFB141C3148B277200923D51 /* main.m in Sources */,
 				BFB141C7148B277200923D51 /* MACAppDelegate.m in Sources */,
-				BFB141CA148B277200923D51 /* MACViewController.m in Sources */,
+				BFB141CA148B277200923D51 /* MainGameViewController.m in Sources */,
 				BFB141D9148B2E7600923D51 /* GameInstance.m in Sources */,
 				BFB141DC148B2E8D00923D51 /* Unit.m in Sources */,
 				BFB141DF148B2E9800923D51 /* Structure.m in Sources */,
@@ -381,6 +533,22 @@
 				BFB14207148C431500923D51 /* RobotWorker.m in Sources */,
 				BFB1420A148C469900923D51 /* Worker.m in Sources */,
 				BF798789148F43ED00F2AF38 /* StructureViewController.m in Sources */,
+				BF99A0EC1491E1BC00E4E97F /* StructureTableViewCell.m in Sources */,
+				BF99A0F61491E4E700E4E97F /* AssetManager.m in Sources */,
+				BFFCE04A1494129B004422A6 /* MACViewController.m in Sources */,
+				BFFCE04D14943BD7004422A6 /* BuilderViewController.m in Sources */,
+				BFFCE05014943C78004422A6 /* HumanSupplyDepot.m in Sources */,
+				BFFCE05714959418004422A6 /* EconomyTableViewCell.m in Sources */,
+				BFFCE060149597AD004422A6 /* HumanBarracks.m in Sources */,
+				BFFCE0631495986F004422A6 /* HumanMarine.m in Sources */,
+				BFFCE0681495A293004422A6 /* BaseViewController.m in Sources */,
+				BFFCE06B1495A5AE004422A6 /* UnitsViewController.m in Sources */,
+				BFFCE0721495A5E9004422A6 /* MapViewController.m in Sources */,
+				BFFCE0761495C045004422A6 /* Location.m in Sources */,
+				BFFCE0791495C47A004422A6 /* Basic1v1Map.m in Sources */,
+				BFCC62031495D7E2005E9923 /* HumanFactory.m in Sources */,
+				BFCC62071495D8C8005E9923 /* HumanHellion.m in Sources */,
+				BFCC620A1495D939005E9923 /* HumanMarauder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,20 +563,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		BFB141CB148B277200923D51 /* MACViewController_iPhone.xib */ = {
+		BFB141CB148B277200923D51 /* BaseViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BFB141CC148B277200923D51 /* en */,
 			);
-			name = MACViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		BFB141CE148B277200923D51 /* MACViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BFB141CF148B277200923D51 /* en */,
-			);
-			name = MACViewController_iPad.xib;
+			name = BaseViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -462,10 +622,12 @@
 		BFB141D4148B277200923D51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Macro/Macro-Prefix.pch";
 				INFOPLIST_FILE = "Macro/Macro-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -473,10 +635,12 @@
 		BFB141D5148B277200923D51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Macro/Macro-Prefix.pch";
 				INFOPLIST_FILE = "Macro/Macro-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -14,6 +14,7 @@
 
 #define BasicGame_InitialWorkers 6
 #define BasicGame_InitialMinerals 50
+#define BasicGame_MaximumSupply 200
 
 @interface Player : NSObject
 
@@ -23,6 +24,10 @@
 @property (nonatomic, retain) NSMutableArray *inProgressStructures;
 @property (nonatomic, retain) NSMutableArray *structures;
 @property (nonatomic, retain) NSMutableArray *units;
+
+//Structure sorting
+@property (nonatomic, readonly) NSArray *productionFacilities;
+@property (nonatomic, readonly) NSArray *infrastructure;
 
 -(id)initWithSpecies:(SpeciesType)type;
 
@@ -35,6 +40,11 @@
 
 -(NSInteger)currentSupply;
 -(NSInteger)maximumSupply;
+-(NSInteger)numberOfWorkers;
+-(NSArray*)army;
+
+-(BOOL)hasStructureWithTitle:(NSString*)title;
+-(NSUInteger)structuresWithTitle:(NSString*)title;
 
 -(void)update:(CFTimeInterval)interval;
 @end

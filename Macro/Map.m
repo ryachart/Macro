@@ -9,5 +9,9 @@
 #import "Map.h"
 
 @implementation Map
+@synthesize locations;
+@synthesize mapImage;
+@synthesize mapSize;
+
 
 @end

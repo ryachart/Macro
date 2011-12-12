@@ -19,12 +19,15 @@
 @synthesize players;
 @synthesize gameDuration;
 @synthesize localPlayer;
+@synthesize isServer;
+
 
 -(id)initWithMap:(Map*)newMap andPlayers:(NSArray*)newPlayers{
     if (self = [super init]){
         self.map = newMap;
         self.players = newPlayers;
         gameDuration = 0.0;
+        self.isServer = YES;
     }
     return self;
 }
@@ -36,11 +39,18 @@
     for (Player *player in self.players){
         [player update:interval];
     }
-    NSLog(@"%1.2f", gameDuration);
+    
+    if (self.isServer){
+        
+    }
 }
 
 -(Player*)localPlayer{
     //First player in the players array is always the local player
     return [self.players objectAtIndex:0];
+}
+
+-(NSData*)packagedInstance{
+    return [NSData dataWithBytes:&self length:sizeof(self)];
 }
 @end

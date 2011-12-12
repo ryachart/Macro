@@ -10,6 +10,15 @@
 
 @implementation Unit
 @synthesize supplyCost;
+@synthesize unitType;
+
+-(id)init{
+    if (self = [super init]){
+        self.supplyCost = 0;
+        self.unitType = UnitTypeFighter;
+    }
+    return self;
+}
 
 
 @end

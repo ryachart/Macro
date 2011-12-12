@@ -11,6 +11,7 @@
 #import "Structure.h"
 #import "Species.h"
 #import "Unit.h"
+#import "StructureTableViewCell.h"
 
 @implementation StructureViewController
 @synthesize gameInstance;
@@ -168,6 +169,8 @@
     NSArray *units = [Species availableUnitsForPlayer:self.gameInstance.localPlayer fromStructure:self.structure];
     
     [self.structure buildUnit:[units objectAtIndex:[indexPath row]]];
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

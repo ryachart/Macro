@@ -20,7 +20,7 @@
 @synthesize elapsedBuildingProgress;
 @synthesize mineralCost;
 @synthesize gasCost;
-
+@synthesize armorValue;
 -(id)init{
     if (self = [super init]){
         health = 0;
@@ -36,13 +36,13 @@
 }
 
 -(void)update:(CFTimeInterval)interval{
-    if (isBuilding){
+    if (self.isBuilding){
         elapsedBuildingProgress += interval;
     }
     
-    if (elapsedBuildingProgress >= buildTime){
-        elapsedBuildingProgress = 0.0;
-        isBuilding = NO;
+    if (self.elapsedBuildingProgress >= self.buildTime){
+        self.elapsedBuildingProgress = 0.0;
+        self.isBuilding = NO;
     }
     
 }

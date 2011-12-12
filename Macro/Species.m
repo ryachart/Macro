@@ -10,12 +10,24 @@
 
 #import "Physical.h"
 #import "Player.h"
+
+//Bugs
 #import "BugWorker.h"
-#import "HumanWorker.h"
-#import "RobotWorker.h"
 #import "BugBase.h"
-#import "HumanBase.h"
+
+//Robots
+#import "RobotWorker.h"
 #import "RobotBase.h"
+
+//Humans
+#import "HumanBase.h"
+#import "HumanWorker.h"
+#import "HumanSupplyDepot.h"
+#import "HumanBarracks.h"
+#import "HumanMarine.h"
+#import "HumanFactory.h"
+#import "HumanHellion.h"
+#import "HumanMarauder.h"
 
 @interface Species ()
 +(NSArray*)bugUnitsFromStructure:(Structure*)structure;
@@ -59,6 +71,30 @@
             break;
     }
     return [structureToReturn autorelease];
+}
+
++(NSArray*)availableStructuresForPlayer:(Player*)player{
+    NSMutableArray *availableStructures = [NSMutableArray arrayWithCapacity:20];
+    switch (player.species) {
+        case Bugs:
+            break;
+        case Humans:
+            if ([player hasStructureWithTitle:@"HumanBase"]){
+                [availableStructures addObject:[[HumanSupplyDepot new] autorelease]];
+                if ([player hasStructureWithTitle:@"HumanSupplyDepot"]){
+                    [availableStructures addObject:[[HumanBarracks new] autorelease]];
+                }
+            }
+            if ([player hasStructureWithTitle:@"HumanBarracks"]){
+                [availableStructures addObject:[[HumanFactory new] autorelease]];
+            }
+            break;
+        case Robots:
+            break;
+        default:
+            break;
+    }
+    return availableStructures;
 }
 
 +(NSArray*)availableUnitsForPlayer:(Player*)player fromStructure:(Structure*)structure{
@@ -124,6 +160,17 @@
         [mineralWorker setTitle:@"Mineral SCV"];
         [mineralWorker setType:MineralWorker];
         return [NSArray arrayWithObjects:[gasWorker autorelease], [mineralWorker autorelease], nil];
+    }
+    
+    if ([structure.structureName isEqualToString:@"HumanBarracks"]){
+        HumanMarine *marine = [HumanMarine new];
+        HumanMarauder *marauder = [HumanMarauder new];
+        return [NSArray arrayWithObjects:[marine autorelease],[marauder autorelease],nil];
+    }
+    
+    if ([structure.structureName isEqualToString:@"HumanFactory"]){
+        HumanHellion *hellion = [HumanHellion new];
+        return [NSArray arrayWithObjects:[hellion autorelease], nil];
     }
     
     return nil;
