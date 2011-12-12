@@ -59,8 +59,10 @@
         case 0: //Attack here
             break;
         case 1: //Expand here
-            [selectedLocation setController:self.gameInstance.localPlayer];
-            [self.gameInstance.localPlayer buildStructure:[Species baseForSpecies:self.gameInstance.localPlayer.species]];
+            if (!selectedLocation.controller){
+                [selectedLocation setController:self.gameInstance.localPlayer];
+                [self.gameInstance.localPlayer buildStructure:[Species baseForSpecies:self.gameInstance.localPlayer.species]];
+            }
             break;
         case 2:
             break;
