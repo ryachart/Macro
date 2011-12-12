@@ -59,7 +59,7 @@
 -(NSUInteger)structuresWithTitle:(NSString*)title{
     NSInteger number = 0;
     for (Structure *structure in self.structures){
-        if ([structure.title isEqualToString:title]){
+        if ([structure.title isEqualToString:title] && !structure.isBuilding){
             number++;
         }
     }
