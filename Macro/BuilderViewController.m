@@ -166,6 +166,7 @@
     Structure *currentStructure = [[Species availableStructuresForPlayer:self.gameInstance.localPlayer] objectAtIndex:indexPath.row];
     
     [self.gameInstance.localPlayer buildStructure:currentStructure];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

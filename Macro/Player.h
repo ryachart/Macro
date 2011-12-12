@@ -40,6 +40,8 @@
 
 -(NSInteger)currentSupply;
 -(NSInteger)maximumSupply;
+-(NSInteger)numberOfWorkers;
+-(NSArray*)army;
 
 -(BOOL)hasStructureWithTitle:(NSString*)title;
 -(NSUInteger)structuresWithTitle:(NSString*)title;

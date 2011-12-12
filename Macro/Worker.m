@@ -21,13 +21,14 @@
 
 -(id)init{
     if (self = [super init]){
-        self.gainFrequency = 6;
-        self.gainsPerReturn = 4;
+        self.gainFrequency = 5.5;
+        self.gainsPerReturn = 5;
         self.timeSinceLastGain = 0;
         self.supplyCost = 1;
         self.buildTime = 17.0f;
         self.gasCost = 0;
         self.mineralCost = 50;
+        self.unitType = UnitTypeWorker;
     }
     return self;
 }

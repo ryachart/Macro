@@ -1,24 +1,32 @@
 //
-//  MACViewController.m
+//  UnitsViewController.m
 //  Macro
 //
-//  Created by Ryan Hart on 12/10/11.
+//  Created by Ryan Hart on 12/11/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "MACViewController.h"
-#import "MainGameViewController.h"
+#import "UnitsViewController.h"
+#import "GameInstance.h"
+#import "Player.h"
+#import "AssetManager.h"
+#import "Unit.h"
 
-@implementation MACViewController
-@synthesize gameDirector;
+@implementation UnitsViewController
+@synthesize gameInstance;
 
-- (id)initWithStyle:(UITableViewStyle)style
+-(id)initWithGameInstance:(GameInstance*)instance
 {
-    self = [super initWithStyle:style];
+    self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
         // Custom initialization
+        self.gameInstance = instance;
     }
     return self;
+}
+
+-(void)display{
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,6 +60,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -80,13 +89,41 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    //Workers
+    //Army
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 1;
+    
+    NSInteger rows = 0;
+    
+    switch (section) {
+        case 0:
+            rows = 1;
+            break;
+        case 1:
+            rows = self.gameInstance.localPlayer.army.count;
+        default:
+            break;
+    }
+    return rows;
+}
+
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    switch (section) {
+        case 0:
+            return @"Workers";
+            break;
+        case 1:
+            return [NSString stringWithFormat:@"Army (%i Units)", self.gameInstance.localPlayer.army.count];
+            break;
+        default:
+            break;
+    }
+    return nil;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -99,7 +136,15 @@
     }
     
     // Configure the cell...
-    cell.textLabel.text = @"Start";
+    if (indexPath.section == 0){
+        cell.imageView.image = nil;
+        cell.textLabel.text = [NSString stringWithFormat:@"Workers: %i", self.gameInstance.localPlayer.numberOfWorkers];
+    }
+    if (indexPath.section  == 1){
+        Unit *currentUnit = [self.gameInstance.localPlayer.army objectAtIndex:indexPath.row];
+        cell.imageView.image = [AssetManager imageForTitle:[currentUnit title]];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ (%i/%i)", [currentUnit title], [currentUnit health], [currentUnit maximumHealth]];
+    }
     
     return cell;
 }
@@ -155,10 +200,6 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
-    MainGameViewController *mgvc = [[MainGameViewController alloc] initWithNibName:nil bundle:nil];
-    self.gameDirector = [[[UINavigationController alloc] initWithRootViewController:mgvc] autorelease];
-    [mgvc release];
-    [self presentModalViewController:self.gameDirector animated:YES];
 }
 
 @end

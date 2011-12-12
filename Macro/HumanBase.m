@@ -11,10 +11,11 @@
 @implementation HumanBase
 -(id)init{
     if (self = [super init]){
-        self.maximumSupplyContribution = 10;
+        self.maximumSupplyContribution = 11;
         self.structureName = @"HumanBase";
         self.isBuilder = YES;
         self.mineralCost = 400;
+        self.buildTime = 75;
     }
     return self;
 }

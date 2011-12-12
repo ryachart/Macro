@@ -8,23 +8,34 @@
 
 #import "AssetManager.h"
 
+
+
 @implementation AssetManager
 
 +(UIImage*)imageForTitle:(NSString*)title{
     UIImage *image = nil;
     
-    NSDictionary *dictionaryOfAssets = [NSDictionary dictionaryWithObjects:
-                                        [NSArray arrayWithObjects:
-                                         [UIImage imageNamed:@"human_worker"],
-                                         [UIImage imageNamed:@"human_worker"],
-                                         [UIImage imageNamed:@"human_base"],
-                                         nil]
-                                                                   forKeys:
-                                        [NSArray arrayWithObjects:
-                                         @"Mineral SCV", 
-                                         @"Gas SCV",
-                                         @"HumanBase", 
-                                         nil]];
+    NSDictionary  *dictionaryOfAssets = [NSDictionary dictionaryWithObjects:
+                                                [NSArray arrayWithObjects:
+                                                 [UIImage imageNamed:@"human_worker"],
+                                                 [UIImage imageNamed:@"human_worker"],
+                                                 [UIImage imageNamed:@"human_base"],
+                                                 [UIImage imageNamed:@"human_barracks"],
+                                                 [UIImage imageNamed:@"human_marine"],
+                                                 [UIImage imageNamed:@"human_marauder"],
+                                                 [UIImage imageNamed:@"human_hellion"],
+                                                 nil]
+                                                                           forKeys:
+                                                [NSArray arrayWithObjects:
+                                                 @"Mineral SCV", 
+                                                 @"Gas SCV",
+                                                 @"HumanBase", 
+                                                 @"HumanBarracks",
+                                                 @"HumanMarine",
+                                                 @"HumanMarauder", 
+                                                 @"HumanHellion",
+                                                 nil]];
+    
     
     image = [dictionaryOfAssets objectForKey:title];
     

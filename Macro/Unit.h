@@ -9,7 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "Physical.h"
 
+typedef enum {
+    UnitTypeWorker,
+    UnitTypeScout,
+    UnitTypeFighter
+} UnitType;
+
 @interface Unit : Physical
+
+@property (nonatomic, readwrite) UnitType unitType;
 
 @property (nonatomic) NSInteger supplyCost;
 

@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+
 #define UIUpdateFrameInterval  20.0f/60.0f
 @class GameInstance;
 
-@interface MainGameViewController : UITableViewController
+@interface MainGameViewController : UIViewController
 @property (nonatomic, retain) GameInstance *gameInstance;
-@property (nonatomic, retain) UISegmentedControl *gameContextSwitcher;
 @end

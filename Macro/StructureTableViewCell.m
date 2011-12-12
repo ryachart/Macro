@@ -17,6 +17,7 @@
 @synthesize buildingUnitProgressView;
 @synthesize structureIconImageView;
 @synthesize infoLabel;
+@synthesize structureNameLabel;
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"StructureTableViewCell" owner:self options:nil];
@@ -34,6 +35,7 @@
     structure = [newStructure retain];
     
     self.structureIconImageView.image = [AssetManager imageForTitle:structure.title];
+    self.structureNameLabel.text = self.structure.title;
 }
 
 
@@ -49,6 +51,7 @@
             self.buildingUnitImageView.hidden = NO;
             self.buildingUnitImageView.image = [AssetManager imageForTitle:[inProgressUnit title]];
             self.buildingUnitProgressView.progress = inProgressUnit.elapsedBuildingProgress / inProgressUnit.buildTime;
+            self.buildingUnitImageView.alpha = inProgressUnit.elapsedBuildingProgress / inProgressUnit.buildTime;
         }else{
             self.buildingUnitImageView.hidden = YES;
             self.buildingUnitImageView.image = nil;

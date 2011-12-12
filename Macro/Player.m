@@ -32,6 +32,26 @@
     return self;
 }
 
+-(NSInteger)numberOfWorkers{
+    NSInteger workers = 0;
+    for (Unit *unit in self.units){
+        if (unit.unitType == UnitTypeWorker){
+            workers++;
+        }
+    }
+    return workers;
+}
+
+-(NSArray*)army{
+    NSMutableArray *army = [NSMutableArray arrayWithCapacity:100];
+    for (Unit *unit in self.units){
+        if (unit.unitType == UnitTypeFighter || unit.unitType == UnitTypeScout  ){
+            [army addObject:unit];
+        }
+    }
+    return army;
+}
+
 -(BOOL)hasStructureWithTitle:(NSString*)title{
     return [self structuresWithTitle:title] > 0;
 }

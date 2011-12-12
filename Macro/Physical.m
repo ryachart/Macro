@@ -20,7 +20,7 @@
 @synthesize elapsedBuildingProgress;
 @synthesize mineralCost;
 @synthesize gasCost;
-
+@synthesize armorValue;
 -(id)init{
     if (self = [super init]){
         health = 0;

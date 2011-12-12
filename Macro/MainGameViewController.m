@@ -9,19 +9,24 @@
 #import "MainGameViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
-#import "StructureViewController.h"
+#import "BaseViewController.h"
+#import "UnitsViewController.h"
+#import "MapViewController.h"
 #import "BuilderViewController.h"
-#import "StructureTableViewCell.h"
 
 #import "GameInstance.h"
 #import "Player.h"
-#import "Structure.h"
-#import "Physical.h"
+
+#import "Basic1v1Map.h"
+
 
 @interface MainGameViewController ()
 @property (nonatomic, retain) CADisplayLink *link;
 @property (nonatomic) CFTimeInterval timeSinceLastUIUpdate;
-
+@property (nonatomic, retain) UISegmentedControl *gameContextSwitcher;
+@property (nonatomic, retain) UnitsViewController *unitsVC;
+@property (nonatomic, retain) MapViewController *mapVC;
+@property (nonatomic, retain) BaseViewController *baseVC;
 -(void)update:(CADisplayLink*)sender;
 -(void)display;
 -(void)switchContext:(UISegmentedControl*)contextSwitcher;
@@ -34,6 +39,9 @@
 @synthesize gameInstance;
 @synthesize timeSinceLastUIUpdate;
 @synthesize gameContextSwitcher;
+@synthesize baseVC;
+@synthesize unitsVC;
+@synthesize mapVC;
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -56,20 +64,35 @@
 }
 
 -(void)display{
-    for (UITableViewCell* cell in self.tableView.visibleCells){
-        if ([cell respondsToSelector:@selector(update)]){
-            [(StructureTableViewCell*)cell update];
-        }
-    }
     //Reload the status cells
-    if (self.navigationController.topViewController == self){
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
-    }
+    [self.baseVC display];
 
 }
 
 -(void)switchContext:(UISegmentedControl*)contextSwitcher{
+    [self.baseVC.view removeFromSuperview];
+    [self.baseVC removeFromParentViewController];
+    [self.unitsVC.view removeFromSuperview];
+    [self.unitsVC removeFromParentViewController];
+    [self.mapVC.view removeFromSuperview];
+    [self.mapVC removeFromParentViewController];
     
+    switch (contextSwitcher.selectedSegmentIndex) {
+        case 0:
+            [self addChildViewController:self.baseVC];
+            [self.view addSubview:self.baseVC.view];
+            break;
+        case 1:
+            [self addChildViewController:self.unitsVC];
+            [self.view addSubview:self.unitsVC.view];
+            break;
+        case 2:
+            [self addChildViewController:self.mapVC];
+            [self.view addSubview:self.mapVC.view];
+            break;
+        default:
+            break;
+    }
 }
 
 -(void)showBuilderViewController{
@@ -91,7 +114,12 @@
     [humanPlayer initializeForBasicGame];
     self.gameInstance = [[[GameInstance alloc] initWithMap:nil andPlayers:[NSArray arrayWithObjects: humanPlayer, bugPlayer, nil]] autorelease];
     
+    self.gameInstance.map = [[[Basic1v1Map alloc] init] autorelease];
     
+    [[self.gameInstance.map.locations objectAtIndex:0] setController:humanPlayer];
+    [[self.gameInstance.map.locations objectAtIndex:1] setController:bugPlayer];
+    
+    self.view.contentMode = UIViewContentModeScaleToFill;
     self.gameContextSwitcher = [[[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"Main", @"Units", @"Map", nil]] autorelease];
     self.gameContextSwitcher.segmentedControlStyle = UISegmentedControlStyleBezeled;
     self.gameContextSwitcher.selectedSegmentIndex = 0;
@@ -99,120 +127,29 @@
     self.gameContextSwitcher.frame = CGRectMake(0, 0, 200, 30);
     [self.gameContextSwitcher addTarget:self action:@selector(switchContext:) forControlEvents:UIControlEventValueChanged];
     
+    self.baseVC = [[[BaseViewController alloc] initWithGameInstance:self.gameInstance] autorelease];
+    self.baseVC.view.frame   = CGRectMake(0, 0, 320, 460);
+    self.baseVC.navigationController = self.navigationController;
+    [self.view addSubview:self.baseVC.view];
+    
+    self.unitsVC = [[[UnitsViewController alloc] initWithGameInstance:self.gameInstance] autorelease];
+    self.unitsVC.view.frame = CGRectMake(0, 0, 320, 460);
+    
+    self.mapVC = [[[MapViewController alloc] initWithGameInstance:self.gameInstance] autorelease];
+    
+    
     self.navigationItem.titleView = self.gameContextSwitcher;
     self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showBuilderViewController)] autorelease];
     
     self.link = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
     [self.link setFrameInterval:1.0/60.0];
-}
-
-
-#pragma mark - Table View Delegate & Data Source
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 1 || indexPath.section == 2){
-        return 90.0f;
-    }
-    return 30.0f;
-}
--(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    switch (section) {
-        case 0:
-            return @"Status";
-        case 1:
-            return @"Production Facilities";
-        case 2:
-            return @"Infrastructure";
-
-    }
-    return nil;
-}
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    switch (section) {
-        case 0:
-            //Minerals
-            //Gas
-            //Supply
-            return 3;
-        case 1:
-            //Each structure builds something
-            return [[self.gameInstance.localPlayer productionFacilities] count];
-            break;
-        case 2:
-            return [[self.gameInstance.localPlayer infrastructure] count];
-            break;
-    }
-    return 0;
-}
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    //Resources
-    //Prod. Facs.
-    //Infra.
-    return 3;
-}
-
--(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString* cellIdentifier = @"Cell";
-    static NSString* cellIdentifier2 = @"Cell2";
-    UITableViewCell *cell;
-
     
-    //Cell Configuration
-    if (indexPath.section == 0){
-        cell  = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-        if (!cell){
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        }
-        switch (indexPath.row) {
-            case 0:
-                cell.textLabel.text = [NSString stringWithFormat:@"Minerals: %i", self.gameInstance.localPlayer.minerals];
-                break;
-            case 1:
-                cell.textLabel.text = [NSString stringWithFormat:@"Gas: %i", self.gameInstance.localPlayer.gas];
-                break;
-            case 2:
-                cell.textLabel.text = [NSString stringWithFormat:@"Supply: %i/%i", self.gameInstance.localPlayer.currentSupply, self.gameInstance.localPlayer.maximumSupply];
-                break;
-            default:
-                break;
-        }
-    }
-    else if (indexPath.section == 1){
-        cell  = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier2];
-        if (!cell){
-            cell = [[StructureTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        }
-        Structure *currentStructure = [self.gameInstance.localPlayer.productionFacilities objectAtIndex:[indexPath row]];
-        
-        [(StructureTableViewCell*)cell setStructure:currentStructure];
-    
-        
-    }else if (indexPath.section == 2){
-        cell  = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier2];
-        if (!cell){
-            cell = [[StructureTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        }
-        Structure *currentStructure = [self.gameInstance.localPlayer.infrastructure objectAtIndex:[indexPath row]];
-        
-        [(StructureTableViewCell*)cell setStructure:currentStructure];
-    }
-    return cell;
+    [self.link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    if (indexPath.section == 1){
-        Structure *currentStructure = [self.gameInstance.localPlayer.structures objectAtIndex:[indexPath row]];
-        if (currentStructure.isBuilder && !currentStructure.isBuilding){
-            StructureViewController *structureVC = [[StructureViewController alloc] initWithGameInstance:self.gameInstance andStructure:currentStructure];
-            [self.navigationController pushViewController:structureVC animated:YES];
-        }
-    }
-    
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
+
+
 
 - (void)viewDidUnload
 {
@@ -225,14 +162,11 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.tableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
-    [self.link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
-}
+    [super viewDidAppear:animated];}
 
 - (void)viewWillDisappear:(BOOL)animated
 {
@@ -247,11 +181,8 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-    } else {
-        return YES;
-    }
+    
+    return interfaceOrientation == UIInterfaceOrientationPortrait;
 }
 
 @end
