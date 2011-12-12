@@ -42,6 +42,8 @@
 		BFCC620E1495DA19005E9923 /* human_marine.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCC620B1495DA19005E9923 /* human_marine.png */; };
 		BFCC620F1495DA19005E9923 /* human_marauder.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCC620C1495DA19005E9923 /* human_marauder.png */; };
 		BFCC62101495DA19005E9923 /* human_hellion.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCC620D1495DA19005E9923 /* human_hellion.png */; };
+		BFCC62121495DDF5005E9923 /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCC62111495DDF5005E9923 /* app_icon.png */; };
+		BFCC62141495DDF8005E9923 /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCC62131495DDF7005E9923 /* app_icon@2x.png */; };
 		BFFCE0461493FD52004422A6 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFCE0451493FD52004422A6 /* GameKit.framework */; };
 		BFFCE04A1494129B004422A6 /* MACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFCE0491494129B004422A6 /* MACViewController.m */; };
 		BFFCE04D14943BD7004422A6 /* BuilderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFCE04C14943BD7004422A6 /* BuilderViewController.m */; };
@@ -123,6 +125,8 @@
 		BFCC620B1495DA19005E9923 /* human_marine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = human_marine.png; sourceTree = "<group>"; };
 		BFCC620C1495DA19005E9923 /* human_marauder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = human_marauder.png; sourceTree = "<group>"; };
 		BFCC620D1495DA19005E9923 /* human_hellion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = human_hellion.png; sourceTree = "<group>"; };
+		BFCC62111495DDF5005E9923 /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon.png; sourceTree = "<group>"; };
+		BFCC62131495DDF7005E9923 /* app_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon@2x.png"; sourceTree = "<group>"; };
 		BFFCE0451493FD52004422A6 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		BFFCE0481494129B004422A6 /* MACViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACViewController.h; sourceTree = "<group>"; };
 		BFFCE0491494129B004422A6 /* MACViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACViewController.m; sourceTree = "<group>"; };
@@ -259,6 +263,8 @@
 		BFB141A7148B277200923D51 = {
 			isa = PBXGroup;
 			children = (
+				BFCC62131495DDF7005E9923 /* app_icon@2x.png */,
+				BFCC62111495DDF5005E9923 /* app_icon.png */,
 				BFB141BC148B277200923D51 /* Macro */,
 				BFB141B5148B277200923D51 /* Frameworks */,
 				BFB141B3148B277200923D51 /* Products */,
@@ -497,6 +503,8 @@
 				BFCC620E1495DA19005E9923 /* human_marine.png in Resources */,
 				BFCC620F1495DA19005E9923 /* human_marauder.png in Resources */,
 				BFCC62101495DA19005E9923 /* human_hellion.png in Resources */,
+				BFCC62121495DDF5005E9923 /* app_icon.png in Resources */,
+				BFCC62141495DDF8005E9923 /* app_icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
