@@ -1,2 +1,8 @@
-.DS_STORE
+.DS_Store
+*.mode1v3
+*.mode2v3
+.xcodeproj/ !*.xcodeproj/project.pbxproj
+xcuserdata
 build
+*.pbxuser
+log
